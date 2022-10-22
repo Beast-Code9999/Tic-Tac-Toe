@@ -25,3 +25,16 @@ body {
     height: 50rem;
     background-color: lightcoral;
 }
+
+.header {
+    width: 100%;
+}
+
+
+.main {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+}
