@@ -38,9 +38,23 @@ body {
     width: 100%;
     background-color: white;
 }
+.header__container--1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
 
+.header__img {
+    width: 2rem;
+}
 
+.header__container--2 {
 
+}
+
+.header__container--3 {
+
+}
 
 
 .main {
