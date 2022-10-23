@@ -1,3 +1,7 @@
+:root {
+    --color-primary: #5bbead;
+}
+
 *,
 *::after,
 *::before {
