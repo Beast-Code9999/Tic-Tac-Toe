@@ -28,11 +28,18 @@ body {
     width: 70rem;
     height: 50rem;
     background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .header {
     width: 100%;
+    background-color: white;
 }
+
+
+
 
 
 .main {
@@ -41,4 +48,5 @@ body {
 
 .footer {
     width: 100%;
+    background-color: white;
 }
