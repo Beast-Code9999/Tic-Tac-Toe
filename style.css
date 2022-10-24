@@ -51,7 +51,22 @@ body {
 }
 
 .header__container--2 {
-
+    width: 100%;
+    height: min-content;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.player {
+    box-sizing: content-box;
+    width: 14rem;
+    height: 2rem;
+    background-color: black;
+    border: 1px solid red;
+    padding: .7rem 2.4rem;
+    line-height: 2rem;
+    border-radius: .5rem;
 }
 
 .header__container--3 {
