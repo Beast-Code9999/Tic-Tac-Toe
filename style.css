@@ -67,9 +67,14 @@ body {
     padding: .7rem 2.4rem;
     line-height: 2rem;
     border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
 }
 .player__img {
     width: 2rem;
+}
+.player__score {
+    font-size: 2rem;
 }
 
 .header__container--3 {
