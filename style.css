@@ -45,6 +45,9 @@ body {
     justify-content: space-between;
     padding: 2rem;
 }
+#mode, .header__share:hover {
+    cursor: pointer;
+}
 
 .header__img {
     width: 2rem;
