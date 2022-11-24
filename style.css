@@ -129,6 +129,8 @@ header {
 /* start of footer */
 
 footer {
+    position: absolute;
+    bottom: 1rem;
     padding: 4rem;
     text-align: center;
     font-size: 1.4rem;
