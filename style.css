@@ -24,10 +24,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 header {
     font-size: 4rem;
+    position: absolute;
+    top: 1rem;
 }
 
 .container {
