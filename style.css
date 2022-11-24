@@ -31,7 +31,7 @@ header {
     font-size: 4rem;
     position: absolute;
     top: 1rem;
-    
+
 }
 
 .container {
@@ -125,3 +125,40 @@ header {
     cursor: pointer;
 }
 
+
+/* start of footer */
+
+footer {
+    padding: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  footer img {
+    width: 1.6rem;
+    height: auto;
+    transition: transform .7s ease-in-out;
+    margin-left: 1rem;
+
+  }
+
+  footer img:hover {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(360deg) scale(1.5);
+  }
+
+/* end of footer */
