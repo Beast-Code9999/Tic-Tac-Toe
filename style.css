@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --color-primary: #5bbead;
 }
@@ -28,10 +30,10 @@ body {
 }
 
 header {
-    font-size: 4rem;
+    font-size: 3rem;
     position: absolute;
-    top: 1rem;
-
+    top: 3rem;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .container {
