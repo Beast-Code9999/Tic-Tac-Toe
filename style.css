@@ -109,6 +109,13 @@ header {
 .main {
     width: 100%;
 }
+.tabble {
+
+}
+
+.table__body {
+    background-color: white;
+}
 
 .footer {
     width: 100%;
