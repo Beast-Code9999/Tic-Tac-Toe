@@ -39,7 +39,8 @@ header {
 .container {
     width: 70rem;
     height: 50rem;
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,11 +109,20 @@ header {
 
 .main {
     width: 100%;
+    position: relative;
+
+}
+.svg {
+    width: 216px;
+    color: red;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 .tabble {
 
 }
-
 .table__body {
     background-color: white;
 }
