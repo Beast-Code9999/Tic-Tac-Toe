@@ -114,8 +114,8 @@ header {
 }
 .svg {
     width: 216px;
-    color: red;
-    height: 100%;
+    fill: green;
+    height: 216px;
     left: 0;
     position: absolute;
     top: 0;
@@ -126,7 +126,12 @@ header {
 .table__body {
     background-color: white;
 }
+.table__row {
 
+}
+.table__data {
+    
+}
 .footer {
     width: 100%;
     background-color: white;
