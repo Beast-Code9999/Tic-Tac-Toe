@@ -123,10 +123,10 @@ header {
     position: absolute;
     top: 0;
 }
-.tabble {
+.table {
     background-color: white;
-    width: 100px;
-    height: 100px;
+    width: 30rem;
+    height: 30rem;
 }
 .table__body {
     background-color: white;
