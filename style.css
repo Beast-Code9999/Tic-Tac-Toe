@@ -136,7 +136,8 @@ header {
 .table__row {
 }
 .table__data {
-
+    /* border: 2px solid red; */
+    /* padding: 5rem; */
 }
 .footer {
     width: 100%;
