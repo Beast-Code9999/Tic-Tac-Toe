@@ -2,6 +2,7 @@
 
 :root {
     --color-primary: #5bbead;
+    --color-secondary: #4ca293;
 }
 
 *,
@@ -129,7 +130,7 @@ header {
     height: 30rem;
 }
 .table__body {
-    background-color: white;
+    background-color: var(--color-primary);
 }
 .table__row {
 
