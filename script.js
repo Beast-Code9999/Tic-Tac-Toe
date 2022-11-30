@@ -3,9 +3,10 @@
 const mode = document.getElementById('mode');
 const share = document.querySelector('.header__share')
 // header container 2
-const playerX = document.querySelector('.player player--x');
+const playerX = document.querySelector('.player--x');
 const playerXScore = document.querySelector('.player__score--x');
-
+const playerO = document.querySelector('.player--o');
+const playerOScore = document.querySelector('.player__score--o');
 
 
 
