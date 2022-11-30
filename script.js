@@ -11,10 +11,13 @@ const playerOScore = document.querySelector('.player__score--o');
 const headerChoiceText = document.querySelector('.header__choice-text');
 // restart game 
 const restart = document.querySelector('.restart');
-function restart() {
-    
-}
+function restartGame() {
 
+}
+// table for animation effect
+const table = document.querySelector('.table');
+const tableData = document.querySelectorAll('.table__data')
+ console.log(tableData)
 // footer script
 const footer = document.querySelector('.footer__year');
 console.log(footer)
