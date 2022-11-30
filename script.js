@@ -9,7 +9,11 @@ const playerO = document.querySelector('.player--o');
 const playerOScore = document.querySelector('.player__score--o');
 // header container 3
 const headerChoiceText = document.querySelector('.header__choice-text');
-
+// restart game 
+const restart = document.querySelector('.restart');
+function restart() {
+    
+}
 
 // footer script
 const footer = document.querySelector('.footer__year');
