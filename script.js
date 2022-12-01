@@ -19,7 +19,7 @@ const table = document.querySelector('.table');
 const tableData = document.querySelectorAll('.table__data')
 // main section
 const mainSection = document.querySelector('.section-main');
-console.log(mainSection)
+
 // footer script
 const footer = document.querySelector('.footer__year');
 console.log(footer)

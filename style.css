@@ -139,6 +139,9 @@ header {
     /* border: 2px solid red; */
     /* padding: 5rem; */
 }
+.table__data:hover {
+    cursor: pointer;
+}
 .footer {
     width: 100%;
     background-color: white;
