@@ -165,6 +165,20 @@ header {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .container {
+        width: 30rem;
+    }
+
+    .header__container--2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+}
+
 /* start of footer */
 
 footer {
