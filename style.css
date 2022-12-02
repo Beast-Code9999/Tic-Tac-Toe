@@ -159,29 +159,6 @@ header {
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
-    .container {
-        width: 50rem;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .container {
-        width: 30rem;
-    }
-
-    .header__container--2 {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header {
-        font-size: 2.5rem;
-        top: 3.5rem;
-    }
-}
-
 /* start of footer */
 
 footer {
@@ -220,3 +197,38 @@ footer {
   }
 
 /* end of footer */
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 50rem;
+    }
+
+    header {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 30rem;
+    }
+
+    .header__container--2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header {
+        font-size: 2.2rem;
+        top: 3.5rem;
+    }
+
+
+}
+
