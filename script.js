@@ -10,15 +10,24 @@ const playerOScore = document.querySelector('.player__score--o');
 // header container 3
 const headerChoiceText = document.querySelector('.header__choice-text');
 // restart game 
+
+
+
+
+
 const restart = document.querySelector('.restart');
 function restartGame() {
 
 }
-// table for animation effect
+// table for animation effect when losing or winning
 const table = document.querySelector('.table');
 const tableData = document.querySelectorAll('.table__data')
 // main section
 const mainSection = document.querySelector('.section-main');
+
+
+
+
 
 // footer script
 const footer = document.querySelector('.footer__year');

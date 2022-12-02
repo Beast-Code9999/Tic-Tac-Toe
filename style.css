@@ -159,6 +159,11 @@ header {
     cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+    .container {
+        width: 50rem;
+    }
+}
 
 /* start of footer */
 
