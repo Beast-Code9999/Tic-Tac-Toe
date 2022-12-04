@@ -1,6 +1,6 @@
 :root {
-    --diameter: 20rem;
-    --circular-width: 2rem;
+    --diameter: 7rem;
+    --circular-width: 1rem;
     --background: black;
     --line-color: blue;
 }
@@ -28,5 +28,12 @@
 }
 
 .circle__inner {
-
+    position: absolute;
+    top: var(--circular-width);
+    left: var(--circular-width);
+    width: calc(var(--diameter) - 2 * var(--circular-width));
+    height: calc(var(--diameter) - 2 * var(--circular-width));
+    background: var(--background);
+    border-radius: 50%;
 }
+
