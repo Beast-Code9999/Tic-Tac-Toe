@@ -1,12 +1,20 @@
 .circle {
-
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    background-color: red;
 }
 
 .circle__container {
-
+    position: relative;
 }
 
 .circle__outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    height: 7rem;
 
 }
 

@@ -138,6 +138,7 @@ header {
 .table__data {
     /* border: 2px solid red; */
     /* padding: 5rem; */
+    position: relative;
 }
 .table__data:hover {
     cursor: pointer;
