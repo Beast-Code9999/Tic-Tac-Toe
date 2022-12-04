@@ -1,7 +1,14 @@
+:root {
+    --diameter: 20rem;
+    --circular-width: 2rem;
+    --background: black;
+    --line-color: blue;
+}
+
 .circle {
     position: absolute;
-    width: 7rem;
-    height: 7rem;
+    width: var(--diameter);
+    height: var(--diameter);
     background-color: red;
 }
 
@@ -13,8 +20,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 7rem;
-    height: 7rem;
+    width: var(--diameter);
+    height: var(--diameter);
+    border-radius: 50%;
+    background: var(--line-color);
 
 }
 
