@@ -45,17 +45,21 @@
 }
 
 .box-top-left {
-
+    top: 0;
+    left: 0;
 }
 
 .box-bottom-left {
-
+    top: calc(var(--diameter)/2);
+    left: 0;
 }
 
 .box-bottom-right {
-
+    top: calc(var(--diameter)/2);
+    left: calc(var(--diameter)/2);
 }
 
 .box-top-right {
-    
+    top: 0;
+    left: calc(var(--diameter)/2);
 }
