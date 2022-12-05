@@ -63,3 +63,17 @@
     top: 0;
     left: calc(var(--diameter)/2);
 }
+
+@keyframes show-top-left {
+    0% {
+
+    }
+
+    99.9% {
+
+    }
+
+    100% {
+        
+    }
+}
