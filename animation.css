@@ -66,14 +66,15 @@
 
 @keyframes show-top-left {
     0% {
-
+        transform: skewX(0deg);
     }
 
     99.9% {
-
+        height: calc(var(--diameter) / 2);
+        width: calc(var(--diameter) / 2);
     }
 
     100% {
-        
+        transform: skewX(90deg);
     }
 }
