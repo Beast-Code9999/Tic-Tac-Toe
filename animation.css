@@ -47,6 +47,8 @@
 .box-top-left {
     top: 0;
     left: 0;
+    transform-origin: 100% 100%;
+    animation: show-top-left 1s linear forwards;
 }
 
 .box-bottom-left {
