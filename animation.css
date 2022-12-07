@@ -10,7 +10,7 @@
     position: absolute;
     width: var(--diameter);
     height: var(--diameter);
-    background-color: red;
+    /* background-color: red; */
 }
 
 .circle__container {
@@ -42,7 +42,7 @@
     position: absolute;
     height: calc(var(--diameter)/2);
     width: calc(var(--diameter)/2);
-    background: white;
+    background: var(--color-primary);
 }
 
 .box-top-left {
@@ -71,6 +71,8 @@
     left: calc(var(--diameter)/2);
     transform-origin: 0 100%;
     animation: show-top-right 1s linear 3s forwards; 
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes show-top-left {
@@ -114,12 +116,14 @@
 @keyframes show-bottom-right {
     0% {
         transform: rotateZ(0deg);
+        opacity: 1;
     }
 
     99.9% {
         height: calc(var(--diameter) / 2);
         width: calc(var(--diameter) / 2);
         transform: rotateZ(-90deg);
+        opacity: 1;
     }
 
     100% {
