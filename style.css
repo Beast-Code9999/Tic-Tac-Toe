@@ -119,6 +119,7 @@ header {
 }
 .frame-svg {
     position: absolute;
+    z-index: 1;
 }
 .table {
     /* background-color: var(--color-secondary); */
