@@ -88,6 +88,7 @@
 
     100% {
         opacity: 0;
+        display: none;
     }
 }
 
@@ -106,21 +107,24 @@
 
     100% {
         opacity: 0;
+        display: none;
     }
 }
 
 @keyframes show-bottom-right {
     0% {
-        transform: skewX(0deg);
+        transform: rotateZ(0deg);
     }
 
     99.9% {
         height: calc(var(--diameter) / 2);
         width: calc(var(--diameter) / 2);
+        transform: rotateZ(-90deg);
     }
 
     100% {
-        transform: skewX(90deg);
+        opacity: 0;
+        display: none;
     }
 }
 
