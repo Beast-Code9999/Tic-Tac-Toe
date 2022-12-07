@@ -48,12 +48,14 @@
     top: 0;
     left: 0;
     transform-origin: 100% 100%;
-    animation: show-top-left 1s linear forwards;
+    animation: show-top-left 2s linear forwards;
 }
 
 .box-bottom-left {
     top: calc(var(--diameter)/2);
     left: 0;
+    transform-origin: 100% 0;
+    animation: show-bottom-left 2s linear 2s forwards; 
 }
 
 .box-bottom-right {
@@ -78,5 +80,20 @@
 
     100% {
         transform: skewX(90deg);
+    }
+}
+
+@keyframes show-bottom-left {
+    0% {
+        transform: skewY(0deg);
+    }
+
+    99.9% {
+        height: calc(var(--diameter) / 2);
+        width: calc(var(--diameter) / 2);
+    }
+
+    100% {
+        transform: skewY(-90deg);
     }
 }
