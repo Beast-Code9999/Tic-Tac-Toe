@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    
+
 }
 
 header {
@@ -117,16 +117,11 @@ header {
     align-items: center;
 
 }
-.svg {
-    width: 216px;
-    fill: rgb(46, 47, 46);
-    height: 216px;
-    left: 0;
+.frame-svg {
     position: absolute;
-    top: 0;
 }
 .table {
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
     width: 30rem;
     height: 30rem;
 
