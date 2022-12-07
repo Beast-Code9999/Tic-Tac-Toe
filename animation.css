@@ -41,7 +41,7 @@
     position: absolute;
     height: calc(var(--diameter)/2);
     width: calc(var(--diameter)/2);
-    background: white;
+    background: transparent;
 }
 
 .box-top-left {
@@ -68,6 +68,8 @@
 .box-top-right {
     top: 0;
     left: calc(var(--diameter)/2);
+    transform-origin: 0 100%;
+    animation: show-top-right 1s linear 3s forwards; 
 }
 
 @keyframes show-top-left {
@@ -112,5 +114,20 @@
 
     100% {
         transform: skewX(90deg);
+    }
+}
+
+@keyframes show-top-right {
+    0% {
+        transform: skewY(0deg);
+    }
+
+    99.9% {
+        height: calc(var(--diameter) / 2);
+        width: calc(var(--diameter) / 2);
+    }
+
+    100% {
+        transform: skewY(-90deg);
     }
 }
