@@ -75,14 +75,14 @@
 
 @keyframes show-top-left {
     0% {
-        transform: rotateX(0deg);
+        transform: rotateZ(0deg);
         opacity: 1;
     }
 
     99.9% {
         height: calc(var(--diameter) / 2);
         width: calc(var(--diameter) / 2);
-        transform: rotate(-90deg);
+        transform: rotateZ(-90deg);
         opacity: 1;
     }
 
@@ -93,16 +93,19 @@
 
 @keyframes show-bottom-left {
     0% {
-        transform: skewY(0deg);
+        transform: rotateZ(0deg);
+        opacity: 1;
     }
 
     99.9% {
         height: calc(var(--diameter) / 2);
         width: calc(var(--diameter) / 2);
+        opacity: 1;
+        transform: rotateZ(-90deg);
     }
 
     100% {
-        transform: skewY(-90deg);
+        opacity: 0;
     }
 }
 
