@@ -1,8 +1,8 @@
 :root {
-    --diameter: 7rem;
+    --diameter: 6rem;
     --circular-width: 1rem;
-    --background: black;
-    --line-color: blue;
+    --background: #5bbead;
+    --line-color: #f2ebd3;
     --color-primary: #5bbead;
 }
 
@@ -11,6 +11,9 @@
     width: var(--diameter);
     height: var(--diameter);
     /* background-color: red; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -55%);
 }
 
 .circle__container {
@@ -49,28 +52,28 @@
     top: 0;
     left: 0;
     transform-origin: 100% 100%;
-    animation: show-top-left 1s linear forwards;
+    animation: show-top-left .05s linear forwards;
 }
 
 .box-bottom-left {
     top: calc(var(--diameter)/2);
     left: 0;
     transform-origin: 100% 0;
-    animation: show-bottom-left 1s linear 1s forwards; 
+    animation: show-bottom-left .05s linear .05s forwards; 
 }
 
 .box-bottom-right {
     top: calc(var(--diameter)/2);
     left: calc(var(--diameter)/2);
     transform-origin: 0 0;
-    animation: show-bottom-right 1s linear 2s forwards; 
+    animation: show-bottom-right .05s linear .1s forwards; 
 }
 
 .box-top-right {
     top: 0;
     left: calc(var(--diameter)/2);
     transform-origin: 0 100%;
-    animation: show-top-right 1s linear 3s forwards; 
+    animation: show-top-right .05s linear .15s forwards; 
     position: relative;
     z-index: 1;
 }
