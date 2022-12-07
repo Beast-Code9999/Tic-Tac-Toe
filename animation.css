@@ -41,7 +41,7 @@
     position: absolute;
     height: calc(var(--diameter)/2);
     width: calc(var(--diameter)/2);
-    background: transparent;
+    background: white;
 }
 
 .box-top-left {
