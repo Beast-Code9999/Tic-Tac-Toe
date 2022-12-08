@@ -4,6 +4,8 @@
     --circle-background: #5bbead;
     --circle-line-color: #f2ebd3;
     --ex-line-color: #545454;
+    --ex-line-length: calc(sqrt(72));
+    --ex-line-width: 1rem;
 }
 
 .circle {
@@ -150,3 +152,18 @@
     }
 }
 
+.ex {
+
+}
+
+.ex__container {
+
+}
+
+.ex__left {
+
+}   
+
+.ex__right {
+
+}
