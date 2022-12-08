@@ -1,9 +1,9 @@
 :root {
     --diameter: 6rem;
     --circular-width: 1rem;
-    --background: #5bbead;
-    --line-color: #f2ebd3;
-    --color-primary: #5bbead;
+    --circle-background: #5bbead;
+    --circle-line-color: #f2ebd3;
+    
 }
 
 .circle {
@@ -27,7 +27,7 @@
     width: var(--diameter);
     height: var(--diameter);
     border-radius: 50%;
-    background: var(--line-color);
+    background: var(--circle-line-color);
 
 }
 
@@ -37,7 +37,7 @@
     left: var(--circular-width);
     width: calc(var(--diameter) - 2 * var(--circular-width));
     height: calc(var(--diameter) - 2 * var(--circular-width));
-    background: var(--background);
+    background: var(--circle-background);
     border-radius: 50%;
 }
 
@@ -149,3 +149,4 @@
         transform: skewY(-90deg);
     }
 }
+
