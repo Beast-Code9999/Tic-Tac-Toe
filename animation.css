@@ -164,16 +164,23 @@
 
 .ex__container {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .ex__left {
+    position: absolute;
     width: var(--ex-line-width);
     height: var(--ex-line-length);
     background-color: black;
 }   
 
 .ex__right {
+    position: absolute;
+    top: -27%;
+    left: 47%;
+    transform: rotateZ(-45deg) translate(-50%, 0);
     width: var(--ex-line-width);
     height: var(--ex-line-length);
-    background-color: black;
+    background-color: white;
 }
