@@ -4,7 +4,7 @@
     --circle-background: #5bbead;
     --circle-line-color: #f2ebd3;
     --ex-line-color: #545454;
-    --ex-line-length: calc(sqrt(72));
+    --ex-line-length: 8.48528rem;
     --ex-line-width: 1rem;
 }
 
@@ -153,17 +153,27 @@
 }
 
 .ex {
-
+    position: absolute;
+    width: var(--diameter);
+    height: var(--diameter);
+    background-color: blue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -55%);
 }
 
 .ex__container {
-
+    position: relative;
 }
 
 .ex__left {
-
+    width: var(--ex-line-width);
+    height: var(--ex-line-length);
+    background-color: black;
 }   
 
 .ex__right {
-
+    width: var(--ex-line-width);
+    height: var(--ex-line-length);
+    background-color: black;
 }
