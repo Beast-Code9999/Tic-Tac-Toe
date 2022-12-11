@@ -42,7 +42,8 @@ header {
     justify-content: center;
     text-align: center;
     z-index: 1000;
-    background-color: orangered;
+    margin-bottom: 2rem;
+    /* background-color: orangered; */
 }
 
 .container {
@@ -183,7 +184,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    /* background-color: lightblue; */
   }
 
   footer a {
