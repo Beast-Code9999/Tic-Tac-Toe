@@ -132,7 +132,7 @@ header {
 .frame-svg {
     position: absolute;
     transform: translateX(-1px);
-    z-index: 1;
+    /* z-index: 1; */
 }
 .table {
     /* background-color: var(--color-secondary); */
@@ -143,7 +143,7 @@ header {
 .table__body {
     background-color: var(--color-primary);
 }
-.table__row {
+.table__row:hover {
 }
 .table__data {
     /* border: 2px solid red; */
@@ -152,6 +152,7 @@ header {
 }
 .table__data:hover {
     cursor: pointer;
+    /* background-color: red; */
 }
 .footer {
     width: 100%;
