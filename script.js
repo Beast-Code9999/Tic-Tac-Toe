@@ -1,6 +1,14 @@
 // header selectors
 // header container 1
-const mode = document.getElementById('mode');
+
+const selectMode = () => {
+    const mode = document.getElementById('mode');
+    console.log(mode)
+    
+}
+
+selectMode()
+
 const share = document.querySelector('.header__share')
 // header container 2
 const playerX = document.querySelector('.player--x');
