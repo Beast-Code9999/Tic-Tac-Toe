@@ -3,8 +3,12 @@
 
 const selectMode = () => {
     const mode = document.getElementById('mode');
-    console.log(mode)
+
+    mode.addEventListener('click', selectedMode)
     
+    function selectedMode(el) {
+        console.log(el.target)
+    }
 }
 
 selectMode()
