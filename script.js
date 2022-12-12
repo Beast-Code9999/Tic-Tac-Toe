@@ -21,12 +21,19 @@ function restartGame() {
 }
 // table for animation effect when losing or winning
 const table = document.querySelector('.table');
-const tableData = document.querySelectorAll('.table__data')
 // main section
 const mainSection = document.querySelector('.section-main');
 
+const displaySign = () => {
+    const tableData = document.querySelectorAll('.table__data')
+    tableData.forEach(element => {
+        element.addEventListener('click', addSign)
+    });
 
-
+    function addSign() {
+        
+    }
+}
 
 
 // footer script
