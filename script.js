@@ -1,17 +1,28 @@
 // header selectors
 // header container 1
 
-const selectMode = () => {
+const selectMode = (() => {
     const mode = document.getElementById('mode');
-
-    mode.addEventListener('click', selectedMode)
+    // console.log(mode.options[mode.selectedIndex].value)
+    // console.log(mode.value)
     
-    function selectedMode(el) {
-        console.log(el.target)
+    const selectedMode = () => {
+        mode.addEventListener('change', changeMode)
+        
+        function changeMode() {
+            console.log(mode.value)
+            return mode.value
+        }
     }
-}
 
-selectMode()
+    return {
+        selectedMode
+    }
+})()
+
+
+
+window.addEventListener('click', selectMode.selectedMode())
 
 const share = document.querySelector('.header__share')
 // header container 2
