@@ -23,7 +23,6 @@ const selectMode = (() => {
 // window.addEventListener('click', () => {
 //     selectMode.selectedMode()})
 
-const share = document.querySelector('.header__share')
 // header container 2
 const playerX = document.querySelector('.player--x');
 const playerXScore = document.querySelector('.player__score--x');
