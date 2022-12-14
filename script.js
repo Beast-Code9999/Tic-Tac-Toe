@@ -30,7 +30,12 @@ const playerSelection = () => {
     const playerO = document.querySelector('.player--o');
     
 }
-const headerChoiceText = document.querySelector('.header__choice-text');
+
+function displayCurrentPlayerTurn() {
+    const headerChoiceText = document.querySelector('.header__choice-text');
+}
+
+
 const playerXScore = document.querySelector('.player__score--x');
 const playerOScore = document.querySelector('.player__score--o');
 // header container 3
