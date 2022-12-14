@@ -1,6 +1,5 @@
 // header selectors
 // header container 1
-
 const selectMode = (() => {
     const mode = document.getElementById('mode');
     // console.log(mode.options[mode.selectedIndex].value)
@@ -19,12 +18,10 @@ const selectMode = (() => {
         selectedMode,
     }
 })()
-
 // window.addEventListener('click', () => {
 //     selectMode.selectedMode()})
 
 // header container 2
-
 const playerSelection = () => {
     const playerX = document.querySelector('.player--x');
     const playerO = document.querySelector('.player--o');
@@ -35,18 +32,15 @@ function displayCurrentPlayerTurn() {
     const headerChoiceText = document.querySelector('.header__choice-text');
 }
 
+function updateScore() {
+    const playerXScore = document.querySelector('.player__score--x');
+    const playerOScore = document.querySelector('.player__score--o');
 
-const playerXScore = document.querySelector('.player__score--x');
-const playerOScore = document.querySelector('.player__score--o');
+}
 // header container 3
 // restart game 
-
-
-
-
-
-const restart = document.querySelector('.restart');
 function restartGame() {
+    const restart = document.querySelector('.restart');
 
 }
 // table for animation effect when losing or winning
