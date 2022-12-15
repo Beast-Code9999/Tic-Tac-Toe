@@ -59,6 +59,12 @@ const displaySign = () => {
     }
 }
 
+const gameBoard = (() => {
+    const _board = new Array(9)
+
+    
+})()
+
 
 // footer script
 const footer = document.querySelector('.footer__year');
