@@ -17,7 +17,7 @@ const selectMode = (() => {
     return {
         selectedMode,
     }
-})()
+})();
 // window.addEventListener('click', () => {
 //     selectMode.selectedMode()})
 
@@ -27,6 +27,7 @@ const playerSelection = () => {
     const playerO = document.querySelector('.player--o');
     
 }
+
 
 function displayCurrentPlayerTurn() {
     const headerChoiceText = document.querySelector('.header__choice-text');
@@ -65,6 +66,9 @@ const gameBoard = (() => {
     
 })()
 
+const miniMax = (() => {
+    
+})()
 
 // footer script
 function addDynamicFooterDate() {
