@@ -1,25 +1,37 @@
 // header selectors
 // header container 1
-const selectMode = (() => {
+const selectMode = (() => { // work in progress...
     const mode = document.getElementById('mode');
     // console.log(mode.options[mode.selectedIndex].value)
     // console.log(mode.value)
-    let currentMode = 'easy';
-    
+    let defaultMode = 'easy';
+    let finalMode;
+
     const selectedMode = () => {
         mode.addEventListener('change', changeMode)
         function changeMode() {
-            currentMode = mode.value
+            defaultMode = mode.value
+
+            // console.log(defaultMode)
+            // console.log(mode.value)
         }
-        console.log(currentMode);
-        return currentMode  
+        if(finalMode === undefined) {
+            return defaultMode;
+        } 
+        else {
+            return finalMode = defaultMode;
+        }
     }
+    
+
     return {
-        selectedMode,
+        finalMode,
     }
 })();
-// window.addEventListener('click', () => {
-//     selectMode.selectedMode()})
+window.addEventListener('click', () => {
+    console.log(    selectMode.finalMode        )
+        }
+    )
 
 // header container 2
 const playerSelection = () => {
