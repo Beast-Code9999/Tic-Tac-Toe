@@ -25,11 +25,11 @@ const selectMode = (() => { // work in progress...
     
 
     return {
-        finalMode,
+        selectedMode,
     }
 })();
 window.addEventListener('click', () => {
-    console.log(    selectMode.finalMode        )
+    console.log(    selectMode.selectedMode()      )
         }
     )
 
@@ -85,7 +85,6 @@ const miniMax = (() => {
 // footer script
 function addDynamicFooterDate() {
     const footer = document.querySelector('.footer__year');
-    console.log(footer)
     let year = new Date().getFullYear()
     footer.textContent = year;
 }
