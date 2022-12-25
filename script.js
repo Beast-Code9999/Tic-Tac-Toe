@@ -1,45 +1,68 @@
 // header selectors
 // header container 1
-const selectMode = (() => { // work in progress...
+const selectMode = (() => { 
     const mode = document.getElementById('mode');
     // console.log(mode.options[mode.selectedIndex].value)
     // console.log(mode.value)
-    let defaultMode = 'easy';
-    let finalMode;
+    let _defaultMode = 'easy';
+    let _finalMode;
 
     const selectedMode = () => {
         mode.addEventListener('change', changeMode)
         function changeMode() {
-            defaultMode = mode.value
+            _defaultMode = mode.value
 
-            // console.log(defaultMode)
+            // console.log(_defaultMode)
             // console.log(mode.value)
         }
-        if(finalMode === undefined) {
-            return defaultMode;
+        if(_finalMode === undefined) {
+            return _defaultMode;
         } 
         else {
-            return finalMode = defaultMode;
+            return _finalMode = _defaultMode;
         }
     }
-    
 
     return {
         selectedMode,
     }
 })();
-window.addEventListener('click', () => {
-    console.log(    selectMode.selectedMode()      )
-        }
-    )
+
+// window.addEventListener('click', () => {
+//     console.log(    selectMode.selectedMode()      )
+//         }
+//     )
 
 // header container 2
-const playerSelection = () => {
+const playerSelection = () => { // in progress...
     const playerX = document.querySelector('.player--x');
     const playerO = document.querySelector('.player--o');
-    
+
+    let _choice = '';
+
+    const choosePlayer = () => {
+        window.addEventListener('click', _checkPlayerChoice)
+
+
+        // return _choice;
+    }
+
+    const _checkPlayerChoice = () => {
+        console.log('hello')
+    }
+
+    const _modifyPlayerChoice = (choice) => {
+        _choice = choice
+    }
+
+    return {
+        choosePlayer,
+    }
 }
 
+window.addEventListener('click', () => {
+    console.log(playerSelection().choosePlayer())
+})
 
 function displayCurrentPlayerTurn() {
     const headerChoiceText = document.querySelector('.header__choice-text');
@@ -76,11 +99,11 @@ const gameBoard = (() => {
     const _board = new Array(9)
 
     
-})()
+})();
 
 const miniMax = (() => {
     
-})()
+})();
 
 // footer script
 function addDynamicFooterDate() {
