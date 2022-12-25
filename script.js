@@ -1,6 +1,6 @@
 // header selectors
 // header container 1
-const selectMode = (() => { 
+const selectMode = (() => { // return a string of selected mode from the dropdown selection
     const mode = document.getElementById('mode');
     // console.log(mode.options[mode.selectedIndex].value)
     // console.log(mode.value)
