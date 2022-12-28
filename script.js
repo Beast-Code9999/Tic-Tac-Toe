@@ -34,26 +34,16 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
 //     )
 
 // header container 2
-const playerSelection = () => { // in progress...
+const playerSelection = () => { // work in progress...
     const playerX = document.querySelector('.player--x');
     const playerO = document.querySelector('.player--o');
 
-    let _choice = '';
+    // let _choice = '';
 
     const choosePlayer = () => {
-        window.addEventListener('click', _checkPlayerChoice)
-
-
         // return _choice;
-    }
+    }  
 
-    const _checkPlayerChoice = () => {
-        console.log('hello')
-    }
-
-    const _modifyPlayerChoice = (choice) => {
-        _choice = choice
-    }
 
     return {
         choosePlayer,
@@ -95,6 +85,10 @@ const displaySign = () => {
     }
 }
 
+const miniMax = (() => {
+    
+})();
+
 const gameBoard = (() => {
     const _board = new Array(9)
 
@@ -105,9 +99,6 @@ const displayController = (() => {
 
 })();
 
-const miniMax = (() => {
-    
-})();
 
 // footer script
 function addDynamicFooterDate() {
