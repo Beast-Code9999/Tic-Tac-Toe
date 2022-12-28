@@ -30,7 +30,7 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
 //     )
 
 // header container 2
-const playerSelection = (() => { // work in progress...
+const playerSelection = (() => { // return the string of player 1 sign, either X or O based on the div clicked
     const _playerX = document.querySelector('.player--x');
     const _playerO = document.querySelector('.player--o');
 
@@ -54,22 +54,22 @@ const playerSelection = (() => { // work in progress...
     }
 })();
 
-window.addEventListener('click', () => {
-    console.log(playerSelection.choosePlayer())
-})
+// window.addEventListener('click', () => {
+//     console.log(playerSelection.choosePlayer())
+// })
 
-function displayCurrentPlayerTurn() {
+function displayCurrentPlayerTurn() { // work in progress...
     const headerChoiceText = document.querySelector('.header__choice-text');
 }
 
-function updateScore() {
+function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
     const playerOScore = document.querySelector('.player__score--o');
 
 }
 // header container 3
 // restart game 
-function restartGame() {
+function restartGame() { // work in progresss...
     const restart = document.querySelector('.restart');
 
 }
@@ -78,7 +78,7 @@ const table = document.querySelector('.table');
 // main section
 const mainSection = document.querySelector('.section-main');
 
-const displaySign = () => {
+const displaySign = () => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
     tableData.forEach(element => {
         element.addEventListener('click', addSign)
@@ -89,23 +89,23 @@ const displaySign = () => {
     }
 }
 
-const miniMax = (() => {
+const miniMax = (() => { // work in progress...
     
 })();
 
-const gameBoard = (() => {
+const gameBoard = (() => { // work in progress...
     const _board = new Array(9)
 
     
 })();
 
-const displayController = (() => {
+const displayController = (() => { // work in progress...
 
 })();
 
 
 // footer script
-function addDynamicFooterDate() {
+function addDynamicFooterDate() { // update footer string representing the current year based on current date
     const footer = document.querySelector('.footer__year');
     let year = new Date().getFullYear()
     footer.textContent = year;
