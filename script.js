@@ -2,8 +2,7 @@
 // header container 1
 const selectMode = (() => { // return a string of selected mode from the dropdown selection
     const mode = document.getElementById('mode');
-    // console.log(mode.options[mode.selectedIndex].value)
-    // console.log(mode.value)
+
     let _defaultMode = 'easy';
     let _finalMode;
 
@@ -11,9 +10,6 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
         mode.addEventListener('change', changeMode)
         function changeMode() {
             _defaultMode = mode.value
-
-            // console.log(_defaultMode)
-            // console.log(mode.value)
         }
         if(_finalMode === undefined) {
             return _defaultMode;
@@ -34,24 +30,32 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
 //     )
 
 // header container 2
-const playerSelection = () => { // work in progress...
-    const playerX = document.querySelector('.player--x');
-    const playerO = document.querySelector('.player--o');
+const playerSelection = (() => { // work in progress...
+    const _playerX = document.querySelector('.player--x');
+    const _playerO = document.querySelector('.player--o');
 
+    let playerChoice;
+
+    _playerX.addEventListener('click', () => {
+        playerChoice = 'playerX'
+    })
+
+    _playerO.addEventListener('click', () => {
+        playerChoice = 'playerO'
+    })
     // let _choice = '';
 
     const choosePlayer = () => {
-        // return _choice;
+        return playerChoice
     }  
-
 
     return {
         choosePlayer,
     }
-}
+})();
 
 window.addEventListener('click', () => {
-    console.log(playerSelection().choosePlayer())
+    console.log(playerSelection.choosePlayer())
 })
 
 function displayCurrentPlayerTurn() {
