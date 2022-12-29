@@ -34,19 +34,18 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
     const _playerX = document.querySelector('.player--x');
     const _playerO = document.querySelector('.player--o');
 
-    let playerChoice = 'playerX';
+    let _playerChoice = 'playerX';
 
     _playerX.addEventListener('click', () => {
-        playerChoice = 'playerX'
+        _playerChoice = 'playerX'
     })
 
     _playerO.addEventListener('click', () => {
-        playerChoice = 'playerO'
+        _playerChoice = 'playerO'
     })
-    // let _choice = '';
 
     const choosePlayer = () => {
-        return playerChoice
+        return _playerChoice
     }  
 
     return {
@@ -89,20 +88,24 @@ const displaySign = () => { // work in progress...
     }
 }
 
-const miniMax = (() => { // work in progress...
+const miniMax = (() => { // work in progress... ai for difficulties
     
 })();
 
-const gameBoard = (() => { // work in progress...
+const gameBoard = (() => { // work in progress... where the board object will be stored
     const _board = new Array(9)
 
     
 })();
 
-const displayController = (() => { // work in progress...
+const displayController = (() => { // work in progress... display all the necessary pieces
 
 })();
 
+
+function game() { // work in progress... where all the functionalities should reside...
+
+}
 
 // footer script
 function addDynamicFooterDate() { // update footer string representing the current year based on current date
