@@ -9,7 +9,7 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
     const selectedMode = () => {
         mode.addEventListener('change', changeMode)
         function changeMode() {
-            _defaultMode = mode.value
+            _defaultMode = mode.value;
         }
         if(_finalMode === undefined) {
             return _defaultMode;
@@ -37,15 +37,15 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
     let _playerChoice = 'playerX';
 
     _playerX.addEventListener('click', () => {
-        _playerChoice = 'playerX'
+        _playerChoice = 'playerX';
     })
 
     _playerO.addEventListener('click', () => {
-        _playerChoice = 'playerO'
+        _playerChoice = 'playerO';
     })
 
     const choosePlayer = () => {
-        return _playerChoice
+        return _playerChoice;
     }  
 
     return {
@@ -57,9 +57,22 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
 //     console.log(playerSelection.choosePlayer())
 // })
 
-function displayCurrentPlayerTurn() { // work in progress...
+function displayCurrentPlayerTurn(message) { // work in progress... 
+    // message is eihther:
+    // start or select player
+    // O turn
+    // X turn
+    // Game over
     const headerChoiceText = document.querySelector('.header__choice-text');
+    
+    headerChoiceText.textContent = `${message}`
+
+
+
+
 }
+
+displayCurrentPlayerTurn()
 
 function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
@@ -106,6 +119,7 @@ const displayController = (() => { // work in progress... display all the necess
 function game() { // work in progress... where all the functionalities should reside...
 
 }
+game();
 
 // footer script
 function addDynamicFooterDate() { // update footer string representing the current year based on current date
