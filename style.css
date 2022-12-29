@@ -77,7 +77,10 @@ header {
 .header__img {
     width: 2rem;
 }
-
+.header__img--small {
+    width: 1.5rem;
+    margin-right: 1rem;
+}
 .header__container--2 {
     width: 100%;
     height: min-content;

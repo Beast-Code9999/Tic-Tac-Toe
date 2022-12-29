@@ -72,7 +72,7 @@ function displayCurrentPlayerTurn(message) { // work in progress...
 
 }
 
-displayCurrentPlayerTurn()
+// displayCurrentPlayerTurn()
 
 function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
