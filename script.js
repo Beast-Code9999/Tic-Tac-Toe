@@ -34,7 +34,7 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
     const _playerX = document.querySelector('.player--x');
     const _playerO = document.querySelector('.player--o');
 
-    let playerChoice;
+    let playerChoice = 'playerX';
 
     _playerX.addEventListener('click', () => {
         playerChoice = 'playerX'
