@@ -65,6 +65,7 @@ header {
     position: relative;
     z-index: 2;
 }
+/* header container 1 contents */
 .header__container--1 {
     display: flex;
     justify-content: space-between;
@@ -77,10 +78,8 @@ header {
 .header__img {
     width: 2rem;
 }
-.header__img--small {
-    width: 1.5rem;
-    margin-right: .5rem;
-}
+/* end of header container 1 contents */
+/* header container 2 contents */
 .header__container--2 {
     width: 100%;
     height: min-content;
@@ -111,10 +110,8 @@ header {
 .player__score {
     font-size: 2rem;
 }
-
-.header__container--3 {
-
-}
+/* end of header container 2 contents */
+/* header container 3 contents */
 .header__choice-text {
     display: flex;
     justify-content: center;
@@ -122,8 +119,16 @@ header {
     padding: 2rem;
     color: #4a4a4a;
 }
-
-
+.header__img--small {
+    width: 1.5rem;
+    margin-right: .5rem;
+}
+.header__span {
+    font-size: 1.5rem;
+    color: #70757a;
+}
+/* end of header container 3 contents */
+/* start of main */
 .main {
     width: 100%;
     position: relative;
