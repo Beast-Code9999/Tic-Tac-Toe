@@ -56,7 +56,7 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
 //     console.log(playerSelection.choosePlayer())
 // })
 
-function displayCurrentPlayerTurn(state) { // work in progress... This will be stored within displayController
+function displayCurrentPlayerTurn(state) { // This will be stored within displayController... Dynamically change .header__choice-text to appropirate game state
     const headerChoiceText = document.querySelector('.header__choice-text');
     const _img = document.createElement('img');
     const _span = document.createElement('span');
@@ -151,6 +151,12 @@ const displaySign = () => { // work in progress...
     tableData.forEach(element => {
         element.addEventListener('click', addSign)
     });
+
+    function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
+        for( let key in attributes ) {
+            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
+        }
+    }
 
     function addSign() {
         
