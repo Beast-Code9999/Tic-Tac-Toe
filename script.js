@@ -64,6 +64,7 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
     // X turn
     // Game over
     const img = document.createElement('img');
+    const span = document.createElement('span');
 
     function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
         for( let key in attributes ) {
@@ -74,10 +75,14 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
     const headerChoiceText = document.querySelector('.header__choice-text');
     
     switch( state ) {
-        case "playerX":
-             // 1 img tag, 1 span tag
-            headerChoiceText.textContent = ''
-            headerChoiceText.appendChild(img)
+        case "playerX": // 1 img tag, 1 span tag
+            headerChoiceText.textContent = '';
+            headerChoiceText.appendChild(img);
+            _helperSetAttribute( img, {
+                "src": "./img/x-lg-svgrepo-com.svg",
+                "class": "header__img--small",
+            })
+            headerChoiceText.appendChild(span)
             // console.log(img)
             break;
         case "playerO":
