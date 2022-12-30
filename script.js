@@ -103,21 +103,29 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
             _addSpanText("Turn");
             break;
         case "over":    // single text block element
-            headerChoiceText.textContent = 'Game Over'; 
+            headerChoiceText.textContent = '';
+            _addSpanText("Game Over") 
             break;
         default:        // single text block element
-            headerChoiceText.textContent = 'start of select player' 
+            headerChoiceText.textContent = '';
+            _addSpanText("start or select player") 
     }
 }
 
-let num = 0;
+let num;
 window.addEventListener('click', () => {
-    num++;
-    if( num % 2 === 0 ) {
+    num = Math.floor(Math.random() * 4);
+    if( num === 0 ) {
         displayCurrentPlayerTurn('playerO')
     }
-    else {
+    else if( num === 1) {
         displayCurrentPlayerTurn('playerX')
+    }
+    else if( num === 2) {
+        displayCurrentPlayerTurn('over')
+    }
+    else if( num === 3) {
+        displayCurrentPlayerTurn()
     }
 })
 
