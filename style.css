@@ -79,7 +79,7 @@ header {
 }
 .header__img--small {
     width: 1.5rem;
-    margin-right: 1rem;
+    margin-right: .5rem;
 }
 .header__container--2 {
     width: 100%;

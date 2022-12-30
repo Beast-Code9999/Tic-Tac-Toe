@@ -57,7 +57,7 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
 //     console.log(playerSelection.choosePlayer())
 // })
 
-function displayCurrentPlayerTurn(message) { // work in progress... 
+function displayCurrentPlayerTurn(state) { // work in progress... This will be stored within displayController
     // message is eihther:
     // start or select player
     // O turn
@@ -65,14 +65,25 @@ function displayCurrentPlayerTurn(message) { // work in progress...
     // Game over
     const headerChoiceText = document.querySelector('.header__choice-text');
     
-    headerChoiceText.textContent = `${message}`
+    switch( state ) {
+        case "playerX":
+            headerChoiceText.textContent = "player xxxxxx turn";
+            break;
+        case "playerO":
+            headerChoiceText.textContent = 'player OOO turn';
+            break;
+        case "over": 
+            headerChoiceText.textContent = 'Game Over';
+            break;
+        default:
+            headerChoiceText.textContent = 'start of select player'
+    }
 
+    // headerChoiceText.textContent = "player xxx turn";
 
-
-
+    // headerChoiceText.textContent = `${}`
 }
-
-// displayCurrentPlayerTurn()
+displayCurrentPlayerTurn()
 
 function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
