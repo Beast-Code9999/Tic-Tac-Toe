@@ -80,27 +80,26 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
         })
     }
 
+    function _addImage( src, alt ) {
+        headerChoiceText.appendChild(_img);
+        _helperSetAttribute( _img, {
+            "src": `${src}`, //"./img/x-lg-svgrepo-com.svg",
+            "class": "header__img--small",
+            "alt": `${alt}`, //"X-img",
+        })
+    }
+
     const headerChoiceText = document.querySelector('.header__choice-text');
     
     switch( state ) {
         case "playerX": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
-            headerChoiceText.appendChild(_img);
-            _helperSetAttribute( _img, {
-                "src": "./img/x-lg-svgrepo-com.svg",
-                "class": "header__img--small",
-                "alt": "X-img",
-            })
+            _addImage( "./img/x-lg-svgrepo-com.svg", "X-img" );
             _addSpanText();
             break;
         case "playerO": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
-            headerChoiceText.appendChild(_img);
-            _helperSetAttribute( _img, {
-                "src": "./img/circle-svgrepo-com.svg",
-                "class": "header__img--small",
-                "alt": "O-img",
-            })   
+            _addImage( "./img/circle-svgrepo-com.svg", "O-img" )
             _addSpanText();
             break;
         case "over":    // single text block element
@@ -109,11 +108,8 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
         default:        // single text block element
             headerChoiceText.textContent = 'start of select player' 
     }
-
-    // headerChoiceText.textContent = "player xxx turn";
-
-    // headerChoiceText.textContent = `${}`
 }
+
 let num = 0;
 window.addEventListener('click', () => {
     num++;
