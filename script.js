@@ -2,7 +2,6 @@
 // header container 1
 const selectMode = (() => { // return a string of selected mode from the dropdown selection
     const mode = document.getElementById('mode');
-
     let _defaultMode = 'easy';
     let _finalMode;
 
@@ -58,17 +57,13 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
 // })
 
 function displayCurrentPlayerTurn(state) { // work in progress... This will be stored within displayController
-    // message is eihther:
-    // start or select player
-    // O turn
-    // X turn
-    // Game over
+    const headerChoiceText = document.querySelector('.header__choice-text');
     const _img = document.createElement('img');
     const _span = document.createElement('span');
 
     function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
         for( let key in attributes ) {
-            el.setAttribute(key, attributes[key]) // key : value pair within an object
+            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
         }
     }
 
@@ -88,8 +83,6 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
             "alt": `${alt}`, //"X-img",
         })
     }
-
-    const headerChoiceText = document.querySelector('.header__choice-text');
     
     switch( state ) {
         case "playerX": // 1 img tag, 1 span tag
@@ -111,29 +104,37 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
             _addSpanText("start or select player") 
     }
 }
+// let num;
+// window.addEventListener('click', () => {
+//     num = Math.floor(Math.random() * 4);
+//     if( num === 0 ) {
+//         displayCurrentPlayerTurn('playerO')
+//     }
+//     else if( num === 1) {
+//         displayCurrentPlayerTurn('playerX')
+//     }
+//     else if( num === 2) {
+//         displayCurrentPlayerTurn('over')
+//     }
+//     else if( num === 3) {
+//         displayCurrentPlayerTurn()
+//     }
+// })
 
-let num;
-window.addEventListener('click', () => {
-    num = Math.floor(Math.random() * 4);
-    if( num === 0 ) {
-        displayCurrentPlayerTurn('playerO')
-    }
-    else if( num === 1) {
-        displayCurrentPlayerTurn('playerX')
-    }
-    else if( num === 2) {
-        displayCurrentPlayerTurn('over')
-    }
-    else if( num === 3) {
-        displayCurrentPlayerTurn()
-    }
-})
-
-function updateScore() { // work in progress...
+function updateScore( xScore, oScore ) { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
     const playerOScore = document.querySelector('.player__score--o');
 
+    if( typeof xScore === 'number' && typeof oScore === 'number' ) {
+        playerXScore.textContent = `${xScore}`
+        playerOScore.textContent = `${oScore}`
+    } 
+    else {
+        console.log("WRONG INPUT ON updateScore()")
+    }
 }
+// updateScore(1, 0)
+
 // header container 3
 // restart game 
 function restartGame() { // work in progresss...
