@@ -63,27 +63,38 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
     // O turn
     // X turn
     // Game over
+    const img = document.createElement('img');
+
+    function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
+        for( let key in attributes ) {
+            el.setAttribute(key, attributes[key]) // key : value pair within an object
+        }
+    }
+
     const headerChoiceText = document.querySelector('.header__choice-text');
     
     switch( state ) {
         case "playerX":
-            headerChoiceText.textContent = "player xxxxxx turn";
+             // 1 img tag, 1 span tag
+            headerChoiceText.textContent = ''
+            headerChoiceText.appendChild(img)
+            // console.log(img)
             break;
         case "playerO":
-            headerChoiceText.textContent = 'player OOO turn';
+            headerChoiceText.textContent = 'player OOO turn'; // 1 img tag, 1 span tag
             break;
         case "over": 
-            headerChoiceText.textContent = 'Game Over';
+            headerChoiceText.textContent = 'Game Over'; // single text block element
             break;
         default:
-            headerChoiceText.textContent = 'start of select player'
+            headerChoiceText.textContent = 'start of select player' // single text block element
     }
 
     // headerChoiceText.textContent = "player xxx turn";
 
     // headerChoiceText.textContent = `${}`
 }
-displayCurrentPlayerTurn()
+displayCurrentPlayerTurn('playerX')
 
 function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
