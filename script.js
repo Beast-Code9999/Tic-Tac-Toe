@@ -72,9 +72,9 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
         }
     }
 
-    function _addSpanText() {
+    function _addSpanText(message) {
         headerChoiceText.appendChild(_span);
-        _span.textContent = "Turn";
+        _span.textContent = `${message}`;
         _helperSetAttribute( _span, {
             "class": "header__span",
         })
@@ -95,12 +95,12 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
         case "playerX": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
             _addImage( "./img/x-lg-svgrepo-com.svg", "X-img" );
-            _addSpanText();
+            _addSpanText("Turn");
             break;
         case "playerO": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
             _addImage( "./img/circle-svgrepo-com.svg", "O-img" )
-            _addSpanText();
+            _addSpanText("Turn");
             break;
         case "over":    // single text block element
             headerChoiceText.textContent = 'Game Over'; 

@@ -125,6 +125,7 @@ header {
 }
 .header__span {
     font-size: 1.5rem;
+    font-weight: 600;
     color: #70757a;
 }
 /* end of header container 3 contents */
