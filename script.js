@@ -72,6 +72,14 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
         }
     }
 
+    function _addSpanText() {
+        headerChoiceText.appendChild(_span);
+        _span.textContent = "Turn";
+        _helperSetAttribute( _span, {
+            "class": "header__span",
+        })
+    }
+
     const headerChoiceText = document.querySelector('.header__choice-text');
     
     switch( state ) {
@@ -83,11 +91,7 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
                 "class": "header__img--small",
                 "alt": "X-img",
             })
-            headerChoiceText.appendChild(_span);
-            _span.textContent = "Turn";
-            _helperSetAttribute( _span, {
-                "class": "header__span",
-            })
+            _addSpanText();
             break;
         case "playerO": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
@@ -97,6 +101,7 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
                 "class": "header__img--small",
                 "alt": "O-img",
             })   
+            _addSpanText();
             break;
         case "over":    // single text block element
             headerChoiceText.textContent = 'Game Over'; 
