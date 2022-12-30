@@ -89,21 +89,36 @@ function displayCurrentPlayerTurn(state) { // work in progress... This will be s
                 "class": "header__span",
             })
             break;
-        case "playerO":
-            headerChoiceText.textContent = 'player OOO turn'; // 1 img tag, 1 span tag
+        case "playerO": // 1 img tag, 1 span tag
+            headerChoiceText.textContent = '';
+            headerChoiceText.appendChild(_img);
+            _helperSetAttribute( _img, {
+                "src": "./img/circle-svgrepo-com.svg",
+                "class": "header__img--small",
+                "alt": "O-img",
+            })   
             break;
-        case "over": 
-            headerChoiceText.textContent = 'Game Over'; // single text block element
+        case "over":    // single text block element
+            headerChoiceText.textContent = 'Game Over'; 
             break;
-        default:
-            headerChoiceText.textContent = 'start of select player' // single text block element
+        default:        // single text block element
+            headerChoiceText.textContent = 'start of select player' 
     }
 
     // headerChoiceText.textContent = "player xxx turn";
 
     // headerChoiceText.textContent = `${}`
 }
-displayCurrentPlayerTurn('playerX')
+let num = 0;
+window.addEventListener('click', () => {
+    num++;
+    if( num % 2 === 0 ) {
+        displayCurrentPlayerTurn('playerO')
+    }
+    else {
+        displayCurrentPlayerTurn('playerX')
+    }
+})
 
 function updateScore() { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
