@@ -56,7 +56,7 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
 //     console.log(playerSelection.choosePlayer())
 // })
 
-function displayCurrentPlayerTurn(state) { // This will be stored within displayController... Dynamically change .header__choice-text to appropirate game state
+function displayCurrentPlayerText(state) { // This will be stored within displayController... Dynamically change .header__choice-text to appropirate game state
     const headerChoiceText = document.querySelector('.header__choice-text');
     const _img = document.createElement('img');
     const _span = document.createElement('span');
@@ -104,20 +104,25 @@ function displayCurrentPlayerTurn(state) { // This will be stored within display
             _addSpanText("start or select player") 
     }
 }
+
+function displayCurrentPlayerBorder() {
+    const _playerX = document.querySelector('.player--x');
+    const _playerO = document.querySelector('.player--o');
+}
 // let num;
 // window.addEventListener('click', () => {
 //     num = Math.floor(Math.random() * 4);
 //     if( num === 0 ) {
-//         displayCurrentPlayerTurn('playerO')
+//         displayCurrentPlayerText('playerO')
 //     }
 //     else if( num === 1) {
-//         displayCurrentPlayerTurn('playerX')
+//         displayCurrentPlayerText('playerX')
 //     }
 //     else if( num === 2) {
-//         displayCurrentPlayerTurn('over')
+//         displayCurrentPlayerText('over')
 //     }
 //     else if( num === 3) {
-//         displayCurrentPlayerTurn()
+//         displayCurrentPlayerText()
 //     }
 // })
 
@@ -152,11 +157,7 @@ const displaySign = () => { // work in progress...
         element.addEventListener('click', addSign)
     });
 
-    function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
-        for( let key in attributes ) {
-            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
-        }
-    }
+    
 
     function addSign() {
         
