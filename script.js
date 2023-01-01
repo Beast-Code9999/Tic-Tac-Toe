@@ -166,15 +166,18 @@ const mainSection = document.querySelector('.section-main');
 const displaySign = () => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
     tableData.forEach(element => {
-        element.addEventListener('click', addSign)
+        element.addEventListener('click', () => {
+            if( element.childElementCount === 0 ) {
+                
+            }
+            
+            console.log(element.childElementCount === 0)
+        })
     });
 
-    
-
-    function addSign() {
-        
-    }
 }
+
+displaySign()
 
 const miniMax = (() => { // work in progress... ai for difficulties
     
