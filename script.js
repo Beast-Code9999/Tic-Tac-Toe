@@ -163,14 +163,17 @@ const table = document.querySelector('.table');
 // main section
 const mainSection = document.querySelector('.section-main');
 
-const displaySign = () => { // work in progress...
+const displaySign = (playerTurn) => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
     tableData.forEach(element => {
-        element.addEventListener('click', () => {
+        element.addEventListener('click', (playerTurn) => {
             if( element.childElementCount === 0 ) {
-                
+                if( playerTurn === "playerX" ) {
+
+                } else if( playerTurn === "playerO" ) {
+
+                }
             }
-            
             console.log(element.childElementCount === 0)
         })
     });
