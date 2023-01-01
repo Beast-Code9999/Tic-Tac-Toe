@@ -105,10 +105,6 @@ function displayCurrentPlayerText(state) { // This will be stored within display
     }
 }
 
-function displayCurrentPlayerBorder() {
-    const _playerX = document.querySelector('.player--x');
-    const _playerO = document.querySelector('.player--o');
-}
 // let num;
 // window.addEventListener('click', () => {
 //     num = Math.floor(Math.random() * 4);
@@ -125,6 +121,22 @@ function displayCurrentPlayerBorder() {
 //         displayCurrentPlayerText()
 //     }
 // })
+
+function displayCurrentPlayerBorder(turn) { // dynamically add .selected-player css to either player div 
+    const _playerX = document.querySelector('.player--x');
+    const _playerO = document.querySelector('.player--o');
+    if( turn === "playerX" ) {
+        _playerX.classList.add("selected-player");
+        _playerO.classList.remove("selected-player");
+    } else if( turn === "playerO" ) {
+        _playerX.classList.remove("selected-player");
+        _playerO.classList.add("selected-player");
+    } else {
+        console.log("WRONG PLAYER INPUT in displayCurrentPLayerBorder()")
+    }
+}
+
+// displayCurrentPlayerBorder('playerXx')
 
 function updateScore( xScore, oScore ) { // work in progress...
     const playerXScore = document.querySelector('.player__score--x');
