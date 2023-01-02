@@ -165,15 +165,22 @@ const mainSection = document.querySelector('.section-main');
 
 const displaySign = (playerTurn) => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
+
+    
+
     tableData.forEach(element => {
-        element.addEventListener('click', (playerTurn) => {
+        element.addEventListener('click', () => {
             if( element.childElementCount === 0 ) {
                 if( playerTurn === "playerX" ) {
-
+                    const circle = document.createElement('div');
+                    circle.classList.add('');
+                    const circleContainer = document.createElement('div');
                 } else if( playerTurn === "playerO" ) {
 
                 }
             }
+
+
             console.log(element.childElementCount === 0)
         })
     });
