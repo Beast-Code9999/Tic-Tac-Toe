@@ -201,11 +201,20 @@ const displaySign = (playerTurn) => { // work in progress...
         //         <div class="box box-top-right"></div>
         //     </div>
         // </div> `
-
     }
 
     function _createExDiv( el ) {
+        // <div class="ex">
+        //     <div class="ex__container">
+        //         <div class="ex__left"></div>
+        //         <div class="ex__right"></div>
+        //     </div>
+        // </div>
 
+        const ex = document.createElement('div');
+        const exContainer = document.createElement('div');
+        const exLeft = document.createElement('div');
+        const exRight = document.createElement('div');
     }
 
     tableData.forEach(element => {
