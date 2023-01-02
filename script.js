@@ -215,6 +215,14 @@ const displaySign = (playerTurn) => { // work in progress...
         const exContainer = document.createElement('div');
         const exLeft = document.createElement('div');
         const exRight = document.createElement('div');
+
+        ex.classList.add('ex');
+        exContainer.classList.add('ex__container');
+        exLeft.classList.add('ex__left');
+        exRight.classList.add('ex__right');
+
+        
+
     }
 
     tableData.forEach(element => {
