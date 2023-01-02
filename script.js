@@ -180,12 +180,15 @@ const displaySign = (playerTurn) => { // work in progress...
         circleContainer.classList.add('circle__container');
         circleOuter.classList.add('circle__outer');
         circleInner.classList.add('circle__inner');
+        boxTopLeft.classList.add('box', 'box-top-left');
+        boxBottomLeft.classList.add('box', 'box-bottom-left');
+        boxBottomRight.classList.add('box', 'box-bottom-right');
+        boxTopRight.classList.add('box', 'box-top-right');
 
         circle.appendChild(circleContainer);
-        circleContainer.append(circleOuter, circleInner);
+        circleContainer.append(circleOuter, circleInner, boxTopLeft, boxBottomLeft, boxBottomRight, boxTopRight);
 
         el.appendChild(circle)
-        console.log(circle)
         
         // el.innerHTML = `
         // <div class="circle">
