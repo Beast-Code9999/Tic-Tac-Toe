@@ -139,12 +139,12 @@ function displayCurrentPlayerBorder(turn) { // dynamically add .selected-player 
 // displayCurrentPlayerBorder('playerXx')
 
 function updateScore( xScore, oScore ) { // work in progress...
-    const playerXScore = document.querySelector('.player__score--x');
-    const playerOScore = document.querySelector('.player__score--o');
+    const _playerXScore = document.querySelector('.player__score--x');
+    const _playerOScore = document.querySelector('.player__score--o');
 
     if( typeof xScore === 'number' && typeof oScore === 'number' ) {
-        playerXScore.textContent = `${xScore}`
-        playerOScore.textContent = `${oScore}`
+        _playerXScore.textContent = `${xScore}`
+        _playerOScore.textContent = `${oScore}`
     } 
     else {
         console.log("WRONG INPUT ON updateScore()")
@@ -166,17 +166,42 @@ const mainSection = document.querySelector('.section-main');
 const displaySign = (playerTurn) => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
 
-    function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
-        for( let key in attributes ) {
-            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
-        }
+    function _createCircleDiv( el ) {
+        const circle = document.createElement('div');
+        const circleContainer = document.createElement('div');
+        const circleOuter = document.createElement('div');
+        const circleInner = document.createElement('div');
+        const boxTopLeft = document.createElement('div');
+        const boxBottomLeft = document.createElement('div');
+        const boxBottomRight = document.createElement('div');
+        const boxTopRight = document.createElement('div');
+
+        circle.classList.add('circle');
+        circleContainer.classList.add('circle__container');
+        circleOuter.classList.add('circle__outer');
+        circleInner.classList.add('circle__inner');
+
+        circle.appendChild(circleContainer);
+        circleContainer.append(circleOuter, circleInner);
+
+        el.appendChild(circle)
+        console.log(circle)
+        
+        // el.innerHTML = `
+        // <div class="circle">
+        //     <div class="circle__container">
+        //         <div class="circle__outer"></div>
+        //         <div class="circle__inner"></div>
+        //         <div class="box box-top-left"></div>
+        //         <div class="box box-bottom-left"></div>
+        //         <div class="box box-bottom-right"></div>
+        //         <div class="box box-top-right"></div>
+        //     </div>
+        // </div> `
+
     }
 
-    function createCircleDiv() {
-
-    }
-
-    function createExDiv() {
+    function _createExDiv( el ) {
 
     }
 
@@ -184,22 +209,20 @@ const displaySign = (playerTurn) => { // work in progress...
         element.addEventListener('click', () => {
             if( element.childElementCount === 0 ) {
                 if( playerTurn === "playerX" ) {
-                    const circle = document.createElement('div');
-                    circle.classList.add('');
-                    const circleContainer = document.createElement('div');
-                } else if( playerTurn === "playerO" ) {
 
+                } else if( playerTurn === "playerO" ) {
+                    _createCircleDiv(element)
                 }
             }
 
 
-            console.log(element.childElementCount === 0)
+            // console.log(element.childElementCount === 0)
         })
     });
 
 }
 
-displaySign()
+displaySign('playerO')
 
 const miniMax = (() => { // work in progress... ai for difficulties
     
