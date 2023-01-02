@@ -221,8 +221,10 @@ const displaySign = (playerTurn) => { // work in progress...
         exLeft.classList.add('ex__left');
         exRight.classList.add('ex__right');
 
-        
+        ex.appendChild(exContainer);
+        exContainer.append(exLeft, exRight);
 
+        el.appendChild(ex);
     }
 
     tableData.forEach(element => {
@@ -231,11 +233,10 @@ const displaySign = (playerTurn) => { // work in progress...
                 if( playerTurn === "playerX" ) {
 
                 } else if( playerTurn === "playerO" ) {
-                    _createCircleDiv(element)
+                    _createExDiv(element)
+                    console.log("WORKS")
                 }
             }
-
-
             // console.log(element.childElementCount === 0)
         })
     });
