@@ -166,7 +166,19 @@ const mainSection = document.querySelector('.section-main');
 const displaySign = (playerTurn) => { // work in progress...
     const tableData = document.querySelectorAll('.table__data')
 
-    
+    function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
+        for( let key in attributes ) {
+            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
+        }
+    }
+
+    function createCircleDiv() {
+
+    }
+
+    function createExDiv() {
+
+    }
 
     tableData.forEach(element => {
         element.addEventListener('click', () => {
