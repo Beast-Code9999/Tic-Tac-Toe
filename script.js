@@ -189,28 +189,9 @@ const displaySign = (playerTurn) => { // work in progress...
         circleContainer.append(circleOuter, circleInner, boxTopLeft, boxBottomLeft, boxBottomRight, boxTopRight);
 
         el.appendChild(circle)
-        
-        // el.innerHTML = `
-        // <div class="circle">
-        //     <div class="circle__container">
-        //         <div class="circle__outer"></div>
-        //         <div class="circle__inner"></div>
-        //         <div class="box box-top-left"></div>
-        //         <div class="box box-bottom-left"></div>
-        //         <div class="box box-bottom-right"></div>
-        //         <div class="box box-top-right"></div>
-        //     </div>
-        // </div> `
     }
 
     function _createExDiv( el ) {
-        // <div class="ex">
-        //     <div class="ex__container">
-        //         <div class="ex__left"></div>
-        //         <div class="ex__right"></div>
-        //     </div>
-        // </div>
-
         const ex = document.createElement('div');
         const exContainer = document.createElement('div');
         const exLeft = document.createElement('div');
@@ -231,19 +212,20 @@ const displaySign = (playerTurn) => { // work in progress...
         element.addEventListener('click', () => {
             if( element.childElementCount === 0 ) {
                 if( playerTurn === "playerX" ) {
-
-                } else if( playerTurn === "playerO" ) {
                     _createExDiv(element)
                     console.log("WORKS")
+                } else if( playerTurn === "playerO" ) {
+                    _createCircleDiv(element)
+                    console.log("WORKS")
+                } else {
+                    console.log("WRONG INPUT within displaySign()")
                 }
             }
-            // console.log(element.childElementCount === 0)
         })
     });
-
 }
 
-displaySign('playerO')
+displaySign('playero')
 
 const miniMax = (() => { // work in progress... ai for difficulties
     
