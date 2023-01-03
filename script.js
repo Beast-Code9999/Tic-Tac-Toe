@@ -227,8 +227,14 @@ displaySign('playero');
 
 function checkWin( board, mark ) {
     return (
-        (board[6] === board[7] === board[8] === mark) || 
-        (board[4] === board)
+        (board[6] === board[7] === board[8] === mark) || // top horizontal 
+        (board[3] === board[4] === board[5] === mark) || // middle horizontal
+        (board[0] === board[1] === board[2] === mark) || // bottom horizontal
+        (board[6] === board[3] === board[0] === mark) || // left vertical
+        (board[7] === board[4] === board[1] === mark) || // middle vertical
+        (board[8] === board[5] === board[2] === mark) || // right vertical
+        (board[6] === board[4] === board[2] === mark) || // backslash diagonal
+        (board[8] === board[4] === board[0] === mark)    // forwardslash diagonal
     )
 }
 
