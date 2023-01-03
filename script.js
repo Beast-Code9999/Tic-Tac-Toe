@@ -225,8 +225,11 @@ const displaySign = (playerTurn) => { // display either x or circle in .table__d
 }
 displaySign('playero');
 
-function checkWin() {
-    
+function checkWin( board, mark ) {
+    return (
+        (board[6] === board[7] === board[8] === mark) || 
+        (board[4] === board)
+    )
 }
 
 const miniMax = (() => { // work in progress... ai for difficulties
@@ -234,7 +237,7 @@ const miniMax = (() => { // work in progress... ai for difficulties
 })();
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
-    const _board = ['','','','','','','','',''];
+    const _board = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
 
 })();
 
