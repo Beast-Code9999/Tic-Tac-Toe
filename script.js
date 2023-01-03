@@ -63,7 +63,7 @@ function displayCurrentPlayerText(state) { // This will be stored within display
 
     function _helperSetAttribute( el, attributes ) { // helper fuction to set multiple attributes to an element
         for( let key in attributes ) {
-            el.setAttribute(key, attributes[key]) // key : value pair within an object of attributes and its value
+            el.setAttribute(key, attributes[key]); // key : value pair within an object of attributes and its value
         }
     }
 
@@ -92,16 +92,16 @@ function displayCurrentPlayerText(state) { // This will be stored within display
             break;
         case "playerO": // 1 img tag, 1 span tag
             headerChoiceText.textContent = '';
-            _addImage( "./img/circle-svgrepo-com.svg", "O-img" )
+            _addImage( "./img/circle-svgrepo-com.svg", "O-img" );
             _addSpanText("Turn");
             break;
         case "over":    // single text block element
             headerChoiceText.textContent = '';
-            _addSpanText("Game Over") 
+            _addSpanText("Game Over");
             break;
         default:        // single text block element
             headerChoiceText.textContent = '';
-            _addSpanText("start or select player") 
+            _addSpanText("start or select player");
     }
 }
 
@@ -132,7 +132,7 @@ function displayCurrentPlayerBorder(turn) { // dynamically add .selected-player 
         _playerX.classList.remove("selected-player");
         _playerO.classList.add("selected-player");
     } else {
-        console.log("WRONG PLAYER INPUT in displayCurrentPLayerBorder()")
+        console.log("WRONG PLAYER INPUT in displayCurrentPLayerBorder()");
     }
 }
 
@@ -143,15 +143,14 @@ function updateScore( xScore, oScore ) { // work in progress...
     const _playerOScore = document.querySelector('.player__score--o');
 
     if( typeof xScore === 'number' && typeof oScore === 'number' ) {
-        _playerXScore.textContent = `${xScore}`
-        _playerOScore.textContent = `${oScore}`
+        _playerXScore.textContent = `${xScore}`;
+        _playerOScore.textContent = `${oScore}`;
     } 
     else {
-        console.log("WRONG INPUT ON updateScore()")
+        console.log("WRONG INPUT ON updateScore()");
     }
 }
 // updateScore(1, 0)
-
 // header container 3
 // restart game 
 function restartGame() { // work in progresss...
@@ -163,8 +162,8 @@ const table = document.querySelector('.table');
 // main section
 const mainSection = document.querySelector('.section-main');
 
-const displaySign = (playerTurn) => { // work in progress...
-    const tableData = document.querySelectorAll('.table__data')
+const displaySign = (playerTurn) => { // display either x or circle in .table__data 
+    const tableData = document.querySelectorAll('.table__data');
 
     function _createCircleDiv( el ) {
         const circle = document.createElement('div');
@@ -188,7 +187,7 @@ const displaySign = (playerTurn) => { // work in progress...
         circle.appendChild(circleContainer);
         circleContainer.append(circleOuter, circleInner, boxTopLeft, boxBottomLeft, boxBottomRight, boxTopRight);
 
-        el.appendChild(circle)
+        el.appendChild(circle);
     }
 
     function _createExDiv( el ) {
@@ -212,29 +211,31 @@ const displaySign = (playerTurn) => { // work in progress...
         element.addEventListener('click', () => {
             if( element.childElementCount === 0 ) {
                 if( playerTurn === "playerX" ) {
-                    _createExDiv(element)
-                    console.log("WORKS")
+                    _createExDiv(element);
+                    console.log("WORKS");
                 } else if( playerTurn === "playerO" ) {
-                    _createCircleDiv(element)
-                    console.log("WORKS")
+                    _createCircleDiv(element);
+                    console.log("WORKS");
                 } else {
-                    console.log("WRONG INPUT within displaySign()")
+                    console.log("WRONG INPUT within displaySign()");
                 }
             }
-        })
+        });
     });
 }
+displaySign('playero');
 
-displaySign('playero')
+function checkWin() {
+    
+}
 
 const miniMax = (() => { // work in progress... ai for difficulties
     
 })();
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
-    const _board = ['','','','','','','','','']
+    const _board = ['','','','','','','','',''];
 
-    
 })();
 
 const displayController = (() => { // work in progress... display all the necessary pieces
@@ -250,7 +251,7 @@ game();
 // footer script
 function addDynamicFooterDate() { // update footer string representing the current year based on current date
     const footer = document.querySelector('.footer__year');
-    let year = new Date().getFullYear()
+    let year = new Date().getFullYear();
     footer.textContent = year;
 }
-addDynamicFooterDate()
+addDynamicFooterDate();
