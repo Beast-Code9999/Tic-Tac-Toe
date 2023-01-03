@@ -232,7 +232,7 @@ const miniMax = (() => { // work in progress... ai for difficulties
 })();
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
-    const _board = new Array(9)
+    const _board = ['','','','','','','','','']
 
     
 })();
