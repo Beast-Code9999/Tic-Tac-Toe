@@ -239,6 +239,10 @@ function checkWin( board, mark ) {
 }
 
 function checkBoardIsEmpty() {
+
+}
+
+function findBestMove() {
     
 }
 
