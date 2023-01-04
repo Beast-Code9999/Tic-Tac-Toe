@@ -238,6 +238,10 @@ function checkWin( board, mark ) {
     )
 }
 
+function checkBoardIsEmpty() {
+    
+}
+
 // let arrayTest = ['o','x','x','x','x','o','o','o','x']
 // let draw = ['x','o','x','x','o','x','o','x','o'];
 
