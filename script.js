@@ -238,57 +238,21 @@ function checkWin( board, mark ) {
     )
 }
 
-let arrayTest = ['o','x','x','x','x','o','o','o','x']
+// let arrayTest = ['o','x','x','x','x','o','o','o','x']
+// let draw = ['x','o','x','x','o','x','o','x','o'];
 
+// let topHorizontal = ['','','','','','','x','x','x'];
+// let middleHorizontal = ['','','','x','x','x','','',''];
+// let bottomHorizontal = ['x','x','x','','','','','',''];
 
+// let leftVertical = ['x','','','x','','','x','',''];
+// let middleVertical = ['','x','','','x','','','x',''];
+// let rightVertical = ['','','x','','','x','','','x'];
 
+// let backslashDiagonal = ['','','x','','x','','x','',''];
+// let frowardslashDiagonal = ['x','','','','x','','','','x']
 
-console.log(checkWin(arrayTest, 'x'))
-
-// console.log((arrayTest[6] && arrayTest[7] && arrayTest[8]) === 'o')
-// console.log((arrayTest[6] && arrayTest[7] && arrayTest[8]) === 'o')
-
-// console.log(arrayTest[6])
-// console.log(arrayTest[7])
-// console.log(arrayTest[8])
-
-// console.log('|||||||||||')
-
-// console.log(arrayTest[3])
-// console.log(arrayTest[4])
-// console.log(arrayTest[5])
-
-// console.log('|||||||||||')
-
-// console.log(arrayTest[0])
-// console.log(arrayTest[1])
-// console.log(arrayTest[2])
-// console.log('|||||||||||')
-
-// console.log(arrayTest[6])
-// console.log(arrayTest[3])
-// console.log(arrayTest[0])
-// console.log('|||||||||||')
-
-// console.log(arrayTest[7])
-// console.log(arrayTest[4])
-// console.log(arrayTest[1])
-// console.log('|||||||||||')
-
-// console.log(arrayTest[8])
-// console.log(arrayTest[5])
-// console.log(arrayTest[2])
-// console.log('|||||||||||')
-
-// console.log(arrayTest[6])
-// console.log(arrayTest[4])
-// console.log(arrayTest[2])
-// console.log('|||||||||||')
-
-// console.log(arrayTest[8])
-// console.log(arrayTest[4])
-// console.log(arrayTest[0])
-
+// console.log(checkWin(draw, 'x'))
 
 
 
