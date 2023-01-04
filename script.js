@@ -243,6 +243,10 @@ function checkBoardIsEmpty() {
 }
 
 function findBestMove() {
+
+}
+
+function evaluateBoard() {
     
 }
 
