@@ -73,9 +73,9 @@ function checkWin( board, mark ) {
 }
 
 // let arrayTest = ['o','x','x','x','x','o','o','o','x']
-// let draw = ['x','o','x','x','o','x','o','x','o'];
+let draw = ['x','o','x','x','o','x','o','x','o'];
 
-// let topHorizontal = ['','','','','','','x','x','x'];
+let topHorizontal = ['_','_','_','_','_','_','x','x','x'];
 // let middleHorizontal = ['','','','x','x','x','','',''];
 // let bottomHorizontal = ['x','x','x','','','','','',''];
 
@@ -88,9 +88,14 @@ function checkWin( board, mark ) {
 
 // console.log(checkWin(draw, 'x'))
 
-function checkBoardIsEmpty() {
-
+function checkBoardIsFull( board ) {
+    for(let i = 0; i < board.length; i++ ) {
+        if(board[i] == '_') {
+            return false
+        } 
+    } return true
 }
+// console.log( checkBoardIsFull(draw) )
 
 function findBestMove() {
 
@@ -108,6 +113,8 @@ function evaluateBoard( board, humanPlayer, aiPlayer ) {
         return 0
     }
 }
+
+// console.log(evaluateBoard( topHorizontal, 'o', 'x'))
 
 
 const miniMax = ((board, depth, isMax) => { // work in progress... ai for difficulties
