@@ -96,13 +96,18 @@ function findBestMove() {
 
 }
 
-function evaluateBoard() {
+function evaluateBoard( board, humanPlayer, aiPlayer ) {
+    let ai = aiPlayer;
+    let human = humanPlayer;
 
+    if( checkWin( board, ai ) ) {
+        return 10
+    } else if( checkWin( board, human ) ) {
+        return -10
+    } else {
+        return 0
+    }
 }
-
-
-
-
 
 
 const miniMax = ((board, depth, isMax) => { // work in progress... ai for difficulties
@@ -116,7 +121,7 @@ const gameBoard = (() => { // work in progress... where the board object will be
 
 const displayController = (() => { // work in progress... display all the necessary pieces
     const displayCurrentPlayerText = (state) => { // This will be stored within displayController... Dynamically change .header__choice-text to appropirate game state
-        const headerChoiceText = document.querySelector('.header__choice-text');
+        const _headerChoiceText = document.querySelector('.header__choice-text');
         const _img = document.createElement('img');
         const _span = document.createElement('span');
     
@@ -127,7 +132,7 @@ const displayController = (() => { // work in progress... display all the necess
         }
     
         function _addSpanText(message) {
-            headerChoiceText.appendChild(_span);
+            _headerChoiceText.appendChild(_span);
             _span.textContent = `${message}`;
             _helperSetAttribute( _span, {
                 "class": "header__span",
@@ -135,7 +140,7 @@ const displayController = (() => { // work in progress... display all the necess
         }
     
         function _addImage( src, alt ) {
-            headerChoiceText.appendChild(_img);
+            _headerChoiceText.appendChild(_img);
             _helperSetAttribute( _img, {
                 "src": `${src}`, //"./img/x-lg-svgrepo-com.svg",
                 "class": "header__img--small",
@@ -145,21 +150,21 @@ const displayController = (() => { // work in progress... display all the necess
         
         switch( state ) {
             case "playerX": // 1 img tag, 1 span tag
-                headerChoiceText.textContent = '';
+                _headerChoiceText.textContent = '';
                 _addImage( "./img/x-lg-svgrepo-com.svg", "X-img" );
                 _addSpanText("Turn");
                 break;
             case "playerO": // 1 img tag, 1 span tag
-                headerChoiceText.textContent = '';
+                _headerChoiceText.textContent = '';
                 _addImage( "./img/circle-svgrepo-com.svg", "O-img" );
                 _addSpanText("Turn");
                 break;
             case "over":    // single text block element
-                headerChoiceText.textContent = '';
+                _headerChoiceText.textContent = '';
                 _addSpanText("Game Over");
                 break;
             default:        // single text block element
-                headerChoiceText.textContent = '';
+                _headerChoiceText.textContent = '';
                 _addSpanText("start or select player");
         }
     }
@@ -274,3 +279,4 @@ function addDynamicFooterDate() { // update footer string representing the curre
     footer.textContent = year;
 }
 addDynamicFooterDate();
+
