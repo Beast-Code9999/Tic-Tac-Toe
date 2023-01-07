@@ -97,11 +97,15 @@ function checkBoardIsFull( board ) {
 }
 // console.log( checkBoardIsFull(draw) )
 
-function findBestMove() {
+function findBestMove( board ) {
+    for(let i = 0; i < board.length; i++) {
+        if(board[i] == '_') {
 
+        }
+    }
 }
 
-function evaluateBoard( board, humanPlayer, aiPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
+function evaluateBoard( board, aiPlayer, humanPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
     let ai = aiPlayer;
     let human = humanPlayer;
 
