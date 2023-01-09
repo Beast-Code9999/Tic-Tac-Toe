@@ -97,21 +97,13 @@ function checkBoardIsFull( board ) {
 }
 // console.log( checkBoardIsFull(draw) )
 
-function findBestMove( board ) {
-    for(let i = 0; i < board.length; i++) {
-        if(board[i] == '_') {
-
-        }
-    }
-}
-
-function evaluateBoard( board, humanPlayer, aiPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
+function evaluateBoard( board, aiPlayer, humanPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
     let ai = aiPlayer;
     let human = humanPlayer;
 
-    if( checkWin( board, human ) ) {
+    if( checkWin( board, ai ) ) {
         return 10;
-    } else if( checkWin( board, ai ) ) {
+    } else if( checkWin( board, human ) ) {
         return -10;
     } else {
         return 0;
@@ -157,6 +149,14 @@ const miniMax = (board, depth, isMax) => { // work in progress... ai for difficu
         return best;
     }
 };
+
+function findBestMove( board ) {
+    for(let i = 0; i < board.length; i++) {
+        if(board[i] == '_') {
+
+        }
+    }
+}
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
     const _board = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
