@@ -105,13 +105,13 @@ function findBestMove( board ) {
     }
 }
 
-function evaluateBoard( board, aiPlayer, humanPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
+function evaluateBoard( board, humanPlayer, aiPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
     let ai = aiPlayer;
     let human = humanPlayer;
 
-    if( checkWin( board, ai ) ) {
+    if( checkWin( board, human ) ) {
         return 10;
-    } else if( checkWin( board, human ) ) {
+    } else if( checkWin( board, ai ) ) {
         return -10;
     } else {
         return 0;
@@ -138,12 +138,24 @@ const miniMax = (board, depth, isMax) => { // work in progress... ai for difficu
 
         for( let i = 0; i < board.length; i++ ) { // traverse the board
             if( board[i] == '_' ) {
-
+                board[i] = player;
+                best = Math.max(best, miniMax(board, depth + 1, !isMax));
+                board[i] = '_';
             }
         }
-    }   
+        return best;
+    } else {
+        let best = 1000;
 
-
+        for(let i = 0; i < board.length; i++) {
+            if(board[i] == '_') {
+                board[i] = ai;
+                best = Math.min(best, miniMax(board, depth + 1, !isMax));
+                board[i] = "_"
+            }
+        }
+        return best;
+    }
 };
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
