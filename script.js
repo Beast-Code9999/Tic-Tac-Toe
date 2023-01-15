@@ -309,20 +309,21 @@ function game() { // work in progress... where all the functionalities should re
     let move = {}
 
     let player1;
-    let aiPlayer;
+    let player2;
     
     playersDiv.forEach( elem => {
         elem.addEventListener('click', () => {
             if(gameController.playerSelection.playerSign() == 'x') {
                 player1 = 'x';
-                aiPlayer = 'o';
+                player2 = 'o';
             } else if(gameController.playerSelection.playerSign() == 'o') {
                 player1 = 'o'; 
-                aiPlayer = 'x';
+                player2 = 'x';
             }
-            console.log(player1, aiPlayer)
+            console.log(player1, player2)
         } )
     })
+
 
 
     // let player = 
