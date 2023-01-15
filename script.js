@@ -258,58 +258,61 @@ const displayController = (() => { // work in progress... display all the necess
     }
 })();
 
-// header selectors
-// header container 1
-const selectMode = (() => { // return a string of selected mode from the dropdown selection
-    const mode = document.getElementById('mode');
-    let _defaultMode = 'easy';
-    let _finalMode;
-
-    const selectedMode = () => {
-        mode.addEventListener('change', changeMode)
-        function changeMode() {
-            _defaultMode = mode.value;
-        }
-        if(_finalMode === undefined) {
-            return _defaultMode;
-        } 
-        else {
-            return _finalMode = _defaultMode;
-        }
-    }
-
-    return {
-        selectedMode,
-    }
-})();
-
-
-// header container 2
-const playerSelection = (() => { // return the string of player 1 sign, either X or O based on the div clicked
-    const _playerX = document.querySelector('.player--x');
-    const _playerO = document.querySelector('.player--o');
-
-    let _playerChoice = 'x';
-
-    _playerX.addEventListener('click', () => {
-        _playerChoice = 'x';
-    })
-
-    _playerO.addEventListener('click', () => {
-        _playerChoice = 'o';
-    })
-
-    const playerSign = () => {
-        return _playerChoice;
-    }  
-
-    return {
-        playerSign,
-    }
-})();
-
 const gameController = (() => {
+    // header selectors
+    // header container 1
+    const selectMode = (() => { // return a string of selected mode from the dropdown selection
+        const mode = document.getElementById('mode');
+        let _defaultMode = 'easy';
+        let _finalMode;
 
+        const selectedMode = () => {
+            mode.addEventListener('change', changeMode)
+            function changeMode() {
+                _defaultMode = mode.value;
+            }
+            if(_finalMode === undefined) {
+                return _defaultMode;
+            } 
+            else {
+                return _finalMode = _defaultMode;
+            }
+        }
+
+        return {
+            selectedMode,
+        }
+    })();
+
+    // header container 2
+    const playerSelection = (() => { // return the string of player 1 sign, either X or O based on the div clicked
+        const _playerX = document.querySelector('.player--x');
+        const _playerO = document.querySelector('.player--o');
+
+        let _playerChoice = 'x';
+
+        _playerX.addEventListener('click', () => {
+            _playerChoice = 'x';
+        })
+
+        _playerO.addEventListener('click', () => {
+            _playerChoice = 'o';
+        })
+
+        const playerSign = () => {
+            return _playerChoice;
+        }  
+
+        return {
+            playerSign,
+        }
+    })();
+
+
+    return {
+        selectMode, 
+        playerSelection,
+    }
 })();
 
 function game() { // work in progress... where all the functionalities should reside...
@@ -319,16 +322,15 @@ function game() { // work in progress... where all the functionalities should re
 
     let player1;
     let aiPlayer;
-
     
     playersDiv.forEach( elem => {
         elem.addEventListener('click', () => {
-            if(playerSelection.playerSign() == 'x') {
+            if(gameController.playerSelection.playerSign() == 'x') {
                 player1 = 'x';
-                ai = 'o';
-            } else if(playerSelection.playerSign() == 'o') {
+                aiPlayer = 'o';
+            } else if(gameController.playerSelection.playerSign() == 'o') {
                 player1 = 'o'; 
-                ai = 'x';
+                aiPlayer = 'x';
             }
             console.log(player1, aiPlayer)
         } )
