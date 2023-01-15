@@ -1,32 +1,18 @@
 
 
-function restartGame() { // work in progresss...
-    const restart = document.querySelector('.restart');
+// function restartGame() { // work in progresss...
+//     const restart = document.querySelector('.restart');
+// }
+// // table for animation effect when losing or winning
+// const table = document.querySelector('.table');
+// // main section
+// const mainSection = document.querySelector('.section-main');
 
-}
-// table for animation effect when losing or winning
-const table = document.querySelector('.table');
-// main section
-const mainSection = document.querySelector('.section-main');
-
-
-function checkWin( board, mark ) {
-    return (
-        ((board[6] === mark) && (board[7] === mark) && (board[8] === mark)) || // top horizontal 
-        ((board[3] === mark) && (board[4] === mark) && (board[5] === mark)) || // middle horizontal
-        ((board[0] === mark) && (board[1] === mark) && (board[2] === mark)) || // bottom horizontal
-        ((board[6] === mark) && (board[3] === mark) && (board[0] === mark)) || // left vertical
-        ((board[7] === mark) && (board[4] === mark) && (board[1] === mark)) || // middle vertical
-        ((board[8] === mark) && (board[5] === mark) && (board[2] === mark)) || // right vertical
-        ((board[6] === mark) && (board[4] === mark) && (board[2] === mark)) || // backslash diagonal
-        ((board[8] === mark) && (board[4] === mark) && (board[0] === mark))    // forwardslash diagonal
-    )
-}
 
 // let arrayTest = ['o','x','x','x','x','o','o','o','x']
-let draw = ['x','o','x','x','o','x','o','x','o'];
+// let draw = ['x','o','x','x','o','x','o','x','o'];
 
-let topHorizontal = ['_','_','_','_','_','_','x','x','x'];
+// let topHorizontal = ['_','_','_','_','_','_','x','x','x'];
 // let middleHorizontal = ['','','','x','x','x','','',''];
 // let bottomHorizontal = ['x','x','x','','','','','',''];
 
@@ -39,72 +25,7 @@ let topHorizontal = ['_','_','_','_','_','_','x','x','x'];
 
 // console.log(checkWin(draw, 'x'))
 
-function checkBoardIsFull( board ) {
-    for(let i = 0; i < board.length; i++ ) {
-        if(board[i] == '_') {
-            return false;
-        } 
-    } return true;
-}
-// console.log( checkBoardIsFull(draw) )
 
-function evaluateBoard( board, aiPlayer, humanPlayer ) { // return a 10 if ai won or -10 if human won or 0 if draw
-    let ai = aiPlayer;
-    let human = humanPlayer;
-
-    if( checkWin( board, ai ) ) {
-        return 10;
-    } else if( checkWin( board, human ) ) {
-        return -10;
-    } else {
-        return 0;
-    }
-}
-// console.log(evaluateBoard( topHorizontal, 'o', 'x'))
-
-
-const miniMax = (board, depth, isMax) => { // work in progress... ai for difficulties
-    let score = evaluateBoard(board, player, ai);
-
-    if( score == 10 ) {
-        return score;
-    } 
-    if( score == -10 ) {
-        return score;
-    }
-    if( checkBoardIsFull == true ) {
-        return 0;
-    }
-    if( isMax ) { // if maximizer's move
-        let best = -1000; 
-        for( let i = 0; i < board.length; i++ ) { // traverse the board
-            if( board[i] == '_' ) {
-                board[i] = player;
-                best = Math.max(best, miniMax(board, depth + 1, !isMax));
-                board[i] = '_';
-            }
-        }
-        return best;
-    } else {
-        let best = 1000;
-        for(let i = 0; i < board.length; i++) {
-            if(board[i] == '_') {
-                board[i] = ai;
-                best = Math.min(best, miniMax(board, depth + 1, !isMax));
-                board[i] = "_"
-            }
-        }
-        return best;
-    }
-};
-
-function findBestMove( board ) {
-    for(let i = 0; i < board.length; i++) {
-        if(board[i] == '_') {
-            // find best move
-        }
-    }
-}
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
     const _board = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
@@ -308,10 +229,77 @@ const gameController = (() => {
         }
     })();
 
+    const checkWin = ( board, mark ) => { // check if any player has won or a draw
+        return (
+            ((board[6] === mark) && (board[7] === mark) && (board[8] === mark)) || // top horizontal 
+            ((board[3] === mark) && (board[4] === mark) && (board[5] === mark)) || // middle horizontal
+            ((board[0] === mark) && (board[1] === mark) && (board[2] === mark)) || // bottom horizontal
+            ((board[6] === mark) && (board[3] === mark) && (board[0] === mark)) || // left vertical
+            ((board[7] === mark) && (board[4] === mark) && (board[1] === mark)) || // middle vertical
+            ((board[8] === mark) && (board[5] === mark) && (board[2] === mark)) || // right vertical
+            ((board[6] === mark) && (board[4] === mark) && (board[2] === mark)) || // backslash diagonal
+            ((board[8] === mark) && (board[4] === mark) && (board[0] === mark))    // forwardslash diagonal
+        )
+    }
+
+    const checkBoardIsFull = ( board ) => {
+        for(let i = 0; i < board.length; i++ ) {
+            if(board[i] == '_') {
+                return false;
+            } 
+        } return true;
+    }    
+
+    const miniMax = (board, depth, isMax) => { // work in progress... ai for difficulties
+        let score = evaluateBoard(board, player, ai);
+    
+        if( score == 10 ) {
+            return score;
+        } 
+        if( score == -10 ) {
+            return score;
+        }
+        if( checkBoardIsFull == true ) {
+            return 0;
+        }
+        if( isMax ) { // if maximizer's move
+            let best = -1000; 
+            for( let i = 0; i < board.length; i++ ) { // traverse the board
+                if( board[i] == '_' ) {
+                    board[i] = player;
+                    best = Math.max(best, miniMax(board, depth + 1, !isMax));
+                    board[i] = '_';
+                }
+            }
+            return best;
+        } else {
+            let best = 1000;
+            for(let i = 0; i < board.length; i++) {
+                if(board[i] == '_') {
+                    board[i] = ai;
+                    best = Math.min(best, miniMax(board, depth + 1, !isMax));
+                    board[i] = "_"
+                }
+            }
+            return best;
+        }
+    }
+
+    const findBestMove = () => ( board ) {
+        for(let i = 0; i < board.length; i++) {
+            if(board[i] == '_') {
+                // find best move
+            }
+        }
+    }
 
     return {
         selectMode, 
         playerSelection,
+        checkWin,
+        checkBoardIsFull,
+        miniMax,
+        findBestMove,
     }
 })();
 
