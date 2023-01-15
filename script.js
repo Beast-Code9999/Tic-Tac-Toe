@@ -306,33 +306,27 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
     }
 })();
 
-window.addEventListener('click', () => {
-    // console.log(playerSelection.choosePlayer())
-    console.log(playerSelection.playerSign())
-})
-
-function assignPlayers() {
-
-}
-
 function game() { // work in progress... where all the functionalities should reside...
+    const playersDiv = document.querySelectorAll('.player');
+    
     let move = {}
 
     let player1;
-    let ai;
+    let aiPlayer;
 
     
-    window.addEventListener('click', () => {
-        if(playerSelection.playerSign() == 'x') {
-            player1 = 'x';
-            ai = 'o';
-        } else if(playerSelection.playerSign() == 'o') {
-            player1 = 'o'; 
-            ai = 'x';
-        }
-        console.log(player1, ai)
-
-    } )
+    playersDiv.forEach( elem => {
+        elem.addEventListener('click', () => {
+            if(playerSelection.playerSign() == 'x') {
+                player1 = 'x';
+                ai = 'o';
+            } else if(playerSelection.playerSign() == 'o') {
+                player1 = 'o'; 
+                ai = 'x';
+            }
+            console.log(player1, aiPlayer)
+        } )
+    })
 
 
     // let player = 
