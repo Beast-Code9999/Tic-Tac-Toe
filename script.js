@@ -29,25 +29,29 @@ const playerSelection = (() => { // return the string of player 1 sign, either X
     const _playerX = document.querySelector('.player--x');
     const _playerO = document.querySelector('.player--o');
 
-    let _playerChoice = 'playerX';
+    let _playerChoice = 'x';
 
     _playerX.addEventListener('click', () => {
-        _playerChoice = 'playerX';
+        _playerChoice = 'x';
     })
 
     _playerO.addEventListener('click', () => {
-        _playerChoice = 'playerO';
+        _playerChoice = 'o';
     })
 
-    const choosePlayer = () => {
+    const playerSign = () => {
         return _playerChoice;
     }  
 
     return {
-        choosePlayer,
+        playerSign,
     }
 })();
 
+window.addEventListener('click', () => {
+    // console.log(playerSelection.choosePlayer())
+    console.log(playerSelection.playerSign())
+})
 
 function restartGame() { // work in progresss...
     const restart = document.querySelector('.restart');
@@ -109,12 +113,11 @@ function evaluateBoard( board, aiPlayer, humanPlayer ) { // return a 10 if ai wo
         return 0;
     }
 }
-
 // console.log(evaluateBoard( topHorizontal, 'o', 'x'))
 
 
 const miniMax = (board, depth, isMax) => { // work in progress... ai for difficulties
-    let score = evaluateBoard(board);
+    let score = evaluateBoard(board, player, ai);
 
     if( score == 10 ) {
         return score;
@@ -127,7 +130,6 @@ const miniMax = (board, depth, isMax) => { // work in progress... ai for difficu
     }
     if( isMax ) { // if maximizer's move
         let best = -1000; 
-
         for( let i = 0; i < board.length; i++ ) { // traverse the board
             if( board[i] == '_' ) {
                 board[i] = player;
@@ -138,7 +140,6 @@ const miniMax = (board, depth, isMax) => { // work in progress... ai for difficu
         return best;
     } else {
         let best = 1000;
-
         for(let i = 0; i < board.length; i++) {
             if(board[i] == '_') {
                 board[i] = ai;
@@ -153,7 +154,7 @@ const miniMax = (board, depth, isMax) => { // work in progress... ai for difficu
 function findBestMove( board ) {
     for(let i = 0; i < board.length; i++) {
         if(board[i] == '_') {
-
+            // find best move
         }
     }
 }
@@ -312,7 +313,21 @@ const displayController = (() => { // work in progress... display all the necess
 
 
 function game() { // work in progress... where all the functionalities should reside...
+    let move = {}
 
+    let humanPlayer;
+    let aiPlayer; 
+
+    
+
+    // window.addEventListener('click', () => {
+    //     console.log(humanPlayer, aiPlayer)
+
+    //      console.log(playerSelection.playerSign()._playerChoice)
+    // } )
+
+
+    // let player = 
 }
 game();
 
