@@ -285,7 +285,7 @@ const gameController = (() => {
         }
     }
 
-    const findBestMove = () => ( board ) {
+    const findBestMove = ( board ) => {
         for(let i = 0; i < board.length; i++) {
             if(board[i] == '_') {
                 // find best move
