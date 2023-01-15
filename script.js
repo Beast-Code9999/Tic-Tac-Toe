@@ -23,36 +23,6 @@ const selectMode = (() => { // return a string of selected mode from the dropdow
     }
 })();
 
-
-// header container 2
-const playerSelection = (() => { // return the string of player 1 sign, either X or O based on the div clicked
-    const _playerX = document.querySelector('.player--x');
-    const _playerO = document.querySelector('.player--o');
-
-    let _playerChoice = 'x';
-
-    _playerX.addEventListener('click', () => {
-        _playerChoice = 'x';
-    })
-
-    _playerO.addEventListener('click', () => {
-        _playerChoice = 'o';
-    })
-
-    const playerSign = () => {
-        return _playerChoice;
-    }  
-
-    return {
-        playerSign,
-    }
-})();
-
-window.addEventListener('click', () => {
-    // console.log(playerSelection.choosePlayer())
-    console.log(playerSelection.playerSign())
-})
-
 function restartGame() { // work in progresss...
     const restart = document.querySelector('.restart');
 
@@ -312,19 +282,57 @@ const displayController = (() => { // work in progress... display all the necess
 })();
 
 
+// header container 2
+const playerSelection = (() => { // return the string of player 1 sign, either X or O based on the div clicked
+    const _playerX = document.querySelector('.player--x');
+    const _playerO = document.querySelector('.player--o');
+
+    let _playerChoice = 'x';
+
+    _playerX.addEventListener('click', () => {
+        _playerChoice = 'x';
+    })
+
+    _playerO.addEventListener('click', () => {
+        _playerChoice = 'o';
+    })
+
+    const playerSign = () => {
+        return _playerChoice;
+    }  
+
+    return {
+        playerSign,
+    }
+})();
+
+window.addEventListener('click', () => {
+    // console.log(playerSelection.choosePlayer())
+    console.log(playerSelection.playerSign())
+})
+
+function assignPlayers() {
+
+}
+
 function game() { // work in progress... where all the functionalities should reside...
     let move = {}
 
-    let humanPlayer;
-    let aiPlayer; 
+    let player1;
+    let ai;
 
     
+    window.addEventListener('click', () => {
+        if(playerSelection.playerSign() == 'x') {
+            player1 = 'x';
+            ai = 'o';
+        } else if(playerSelection.playerSign() == 'o') {
+            player1 = 'o'; 
+            ai = 'x';
+        }
+        console.log(player1, ai)
 
-    // window.addEventListener('click', () => {
-    //     console.log(humanPlayer, aiPlayer)
-
-    //      console.log(playerSelection.playerSign()._playerChoice)
-    // } )
+    } )
 
 
     // let player = 
