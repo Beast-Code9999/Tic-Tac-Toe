@@ -316,11 +316,13 @@ const gameController = (() => {
 
 function game() { // work in progress... where all the functionalities should reside...
     const playersDiv = document.querySelectorAll('.player');
+    const modeDiv = document.getElementById('mode');
+    
     
     let move = {}
 
-    let player1;
-    let player2;
+    let player1; // human
+    let player2; // ai or human_2
 
     // if game on: i.e. x makes a move
     // player selection cannot occur
@@ -342,10 +344,10 @@ function game() { // work in progress... where all the functionalities should re
                 player2 = 'x';
             }
             console.log(player1, player2)
-        } )
+        })
     })
 
-
+    
 
     // let player = 
 }
