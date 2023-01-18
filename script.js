@@ -263,7 +263,7 @@ const gameController = (() => {
             return 0;
         }
         if( isMax ) { // if maximizer's move
-            let best = -1000; 
+            let best = -Infinity; 
             for( let i = 0; i < board.length; i++ ) { // traverse the board
                 if( board[i] == '_' ) {
                     board[i] = player;
@@ -273,7 +273,7 @@ const gameController = (() => {
             }
             return best;
         } else {
-            let best = 1000;
+            let best = Infinity;
             for(let i = 0; i < board.length; i++) {
                 if(board[i] == '_') {
                     board[i] = ai;
@@ -286,9 +286,20 @@ const gameController = (() => {
     }
 
     const findBestMove = ( board ) => {
-        for(let i = 0; i < board.length; i++) {
-            if(board[i] == '_') {
+        let bestScore = -Infinity;
+        let bestMove;
+
+;        for(let i = 0; i < board.length; i++) {
+            if(board[i] == '_') { // is the spot available
                 // find best move
+                board[i] = player;
+                let score = miniMax(board, 0, false);
+                board[i] = '';
+                if( score > bestScore ) {
+                    bestScore = score;
+                    bestMove = board[i];
+                }
+
             }
         }
     }
