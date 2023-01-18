@@ -297,9 +297,8 @@ const gameController = (() => {
                 board[i] = '';
                 if( score > bestScore ) {
                     bestScore = score;
-                    bestMove = board[i];
+                    bestMove = i;
                 }
-
             }
         }
         return bestMove;
@@ -322,6 +321,16 @@ function game() { // work in progress... where all the functionalities should re
 
     let player1;
     let player2;
+
+    // if game on: i.e. x makes a move
+    // player selection cannot occur
+
+    // Mode can be changed throughout the game, when changed score stays the same, but board is erased, 
+    // Mode changed to 2 player restarts the game completely
+
+    // retarts erases the board, but not the score
+
+    // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
     
     playersDiv.forEach( elem => {
         elem.addEventListener('click', () => {
