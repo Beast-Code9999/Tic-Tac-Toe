@@ -302,6 +302,7 @@ const gameController = (() => {
 
             }
         }
+        return bestMove;
     }
 
     return {
