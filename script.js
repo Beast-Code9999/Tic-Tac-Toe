@@ -182,24 +182,42 @@ const displayController = (() => { // work in progress... display all the necess
 const gameController = (() => {
     // header selectors
     // header container 1
+    // const gameMode = (() => { // return a string of selected mode from the dropdown selection
+    //     const mode = document.getElementById('mode');
+    //     let _defaultMode = 'easy';
+    //     let _finalMode;
+
+    //     const selectedMode = () => {
+    //         mode.addEventListener('change', changeMode)
+    //         function changeMode() {
+    //             _defaultMode = mode.value;
+    //         }
+    //         if(_finalMode === undefined) {
+    //             return _defaultMode;
+    //         } 
+    //         else {
+    //             return _finalMode = _defaultMode;
+    //         }
+    //     }
+
+    //     return {
+    //         selectedMode,
+    //     }
+    // })();
+
     const gameMode = (() => { // return a string of selected mode from the dropdown selection
         const mode = document.getElementById('mode');
-        let _defaultMode = 'easy';
         let _finalMode;
-
-        const selectedMode = () => {
-            mode.addEventListener('change', changeMode)
-            function changeMode() {
-                _defaultMode = mode.value;
-            }
-            if(_finalMode === undefined) {
-                return _defaultMode;
-            } 
-            else {
-                return _finalMode = _defaultMode;
-            }
+    
+        mode.addEventListener('change', changeMode)
+        function changeMode() {
+            _finalMode = mode.value;
         }
-
+    
+        const selectedMode = () => {
+            return _finalMode;
+        }
+    
         return {
             selectedMode,
         }
@@ -317,8 +335,10 @@ const gameController = (() => {
 function game() { // work in progress... where all the functionalities should reside...
     const playersDiv = document.querySelectorAll('.player');
     const modeDiv = document.getElementById('mode');
+
     
-    
+    let currentMode = 'easy';
+    // console.log(currentMode)
     let move = {}
 
     let player1; // human
@@ -347,7 +367,11 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
+    modeDiv.addEventListener('change', () => { // listen for mode change 
+        currentMode = gameController.gameMode.selectedMode();
+        // console.log("this is now the current mode: ", currentMode)
     
+    })
 
     // let player = 
 }
