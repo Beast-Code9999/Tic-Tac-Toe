@@ -182,7 +182,7 @@ const displayController = (() => { // work in progress... display all the necess
 const gameController = (() => {
     // header selectors
     // header container 1
-    const selectMode = (() => { // return a string of selected mode from the dropdown selection
+    const gameMode = (() => { // return a string of selected mode from the dropdown selection
         const mode = document.getElementById('mode');
         let _defaultMode = 'easy';
         let _finalMode;
@@ -305,7 +305,7 @@ const gameController = (() => {
     }
 
     return {
-        selectMode, 
+        gameMode, 
         playerSelection,
         checkWin,
         checkBoardIsFull,
