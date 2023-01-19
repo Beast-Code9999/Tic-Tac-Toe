@@ -338,6 +338,8 @@ function game() { // work in progress... where all the functionalities should re
 
     
     let currentMode = 'easy';
+    let playerTurn;
+    let gameOn = false;
     // console.log(currentMode)
     let move = {}
 
@@ -354,14 +356,20 @@ function game() { // work in progress... where all the functionalities should re
 
     // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
     
+    displayController.displayCurrentPlayerText();
+
     playersDiv.forEach( elem => {
         elem.addEventListener('click', () => {
             if(gameController.playerSelection.playerSign() == 'x') {
                 player1 = 'x';
                 player2 = 'o';
+                displayController.displayCurrentPlayerText('x');
+                displayController.displayCurrentPlayerBorder('x');
             } else if(gameController.playerSelection.playerSign() == 'o') {
                 player1 = 'o'; 
                 player2 = 'x';
+                displayController.displayCurrentPlayerText('x');
+                displayController.displayCurrentPlayerBorder('x');
             }
             console.log(player1, player2)
         })
