@@ -62,12 +62,12 @@ const displayController = (() => { // work in progress... display all the necess
         }
         
         switch( state ) {
-            case "playerX": // 1 img tag, 1 span tag
+            case "x": // 1 img tag, 1 span tag
                 _headerChoiceText.textContent = '';
                 _addImage( "./img/x-lg-svgrepo-com.svg", "X-img" );
                 _addSpanText("Turn");
                 break;
-            case "playerO": // 1 img tag, 1 span tag
+            case "o": // 1 img tag, 1 span tag
                 _headerChoiceText.textContent = '';
                 _addImage( "./img/circle-svgrepo-com.svg", "O-img" );
                 _addSpanText("Turn");
@@ -85,10 +85,10 @@ const displayController = (() => { // work in progress... display all the necess
     const displayCurrentPlayerBorder = (turn) => { // dynamically add .selected-player css to either player div 
         const _playerX = document.querySelector('.player--x');
         const _playerO = document.querySelector('.player--o');
-        if( turn === "playerX" ) {
+        if( turn === "x" ) {
             _playerX.classList.add("selected-player");
             _playerO.classList.remove("selected-player");
-        } else if( turn === "playerO" ) {
+        } else if( turn === "o" ) {
             _playerX.classList.remove("selected-player");
             _playerO.classList.add("selected-player");
         } else {
@@ -157,10 +157,10 @@ const displayController = (() => { // work in progress... display all the necess
         tableData.forEach(element => {
             element.addEventListener('click', () => {
                 if( element.childElementCount === 0 ) {
-                    if( playerTurn === "playerX" ) {
+                    if( playerTurn === "x" ) {
                         _createExDiv(element);
                         console.log("WORKS");
-                    } else if( playerTurn === "playerO" ) {
+                    } else if( playerTurn === "o" ) {
                         _createCircleDiv(element);
                         console.log("WORKS");
                     } else {
@@ -307,7 +307,7 @@ const gameController = (() => {
         let bestScore = -Infinity;
         let bestMove;
 
-;        for(let i = 0; i < board.length; i++) {
+        for(let i = 0; i < board.length; i++) {
             if(board[i] == '_') { // is the spot available
                 // find best move
                 board[i] = player;
@@ -367,11 +367,13 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
-    modeDiv.addEventListener('change', () => { // listen for mode change 
+    modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
         currentMode = gameController.gameMode.selectedMode();
         // console.log("this is now the current mode: ", currentMode)
-    
     })
+
+
+
 
     // let player = 
 }
