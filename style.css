@@ -46,6 +46,16 @@ header {
     /* background-color: orangered; */
 }
 
+/* keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .container {
     width: 70rem;
     height: 50rem;
@@ -100,6 +110,7 @@ header {
 }
 .selected-player {
     border-bottom: 4px solid var(--color-primary);
+    /* animation: fadeIn .5s; */
 }
 .player:hover {
     cursor: pointer;
@@ -220,6 +231,7 @@ footer {
   }
 
 /* end of footer */
+
 
 
 @media screen and (max-width: 800px) {
