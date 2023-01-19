@@ -356,20 +356,19 @@ function game() { // work in progress... where all the functionalities should re
 
     // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
     
-    displayController.displayCurrentPlayerText();
+    
+    displayController.displayCurrentPlayerText(); // default text for .header__choice-text
+    displayController.displayCurrentPlayerBorder('x'); // default selected player css
 
-    playersDiv.forEach( elem => {
+    playersDiv.forEach( elem => { // assign players based on click on either .player--x or .player--o
         elem.addEventListener('click', () => {
             if(gameController.playerSelection.playerSign() == 'x') {
                 player1 = 'x';
                 player2 = 'o';
-                displayController.displayCurrentPlayerText('x');
-                displayController.displayCurrentPlayerBorder('x');
             } else if(gameController.playerSelection.playerSign() == 'o') {
                 player1 = 'o'; 
                 player2 = 'x';
                 displayController.displayCurrentPlayerText('x');
-                displayController.displayCurrentPlayerBorder('x');
             }
             console.log(player1, player2)
         })
