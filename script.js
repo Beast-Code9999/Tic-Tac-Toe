@@ -165,13 +165,15 @@ const displayController = (() => { // work in progress... display all the necess
         //         }
         //     });
         // });
-        if( playerTurn == 'x' ) {
-            _createExDiv(element);
-        } else if( playerTurn == 'o' ) {
-            _createCircleDiv(element);
-        } else {
-            console.log("WRONG INPUT within displaySign()");
-        }
+        if( element.childElementCount === 0 ) {
+            if( playerTurn == 'x' ) {
+                _createExDiv(element);
+            } else if( playerTurn == 'o' ) {
+                _createCircleDiv(element);
+            } else {
+                console.log("WRONG INPUT within displaySign()");
+            }
+        }   
     }
 
     return {
@@ -394,12 +396,14 @@ function game() { // work in progress... where all the functionalities should re
             gameOn = true;
             console.log(el)
             console.log(playerTurn)
-            if( playerTurn == 'x' ) {
-                displayController.displaySign('x', el);
-                playerTurn = 'o';
-            } else if( playerTurn == 'o') {
-                displayController.displaySign('o', el);
-                playerTurn = 'x';
+            if( el.childElementCount === 0 ) {
+                if( playerTurn == 'x' ) {
+                    displayController.displaySign('x', el);
+                    playerTurn = 'o';
+                } else if( playerTurn == 'o') {
+                    displayController.displaySign('o', el);
+                    playerTurn = 'x';
+                }
             }
         })
     })
