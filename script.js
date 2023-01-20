@@ -346,12 +346,13 @@ function game() { // work in progress... where all the functionalities should re
     
     let currentMode = 'easy';
     let playerTurn = 'x';
+
     let gameOn = false;
     // console.log(currentMode)
     let move = {}
 
-    let player1; // human
-    let player2; // ai or human_2
+    let player1 = 'x'; // human
+    let player2 = 'o'; // ai or human_2
 
     // if game on: i.e. x makes a move
     // player selection cannot occur
@@ -396,7 +397,7 @@ function game() { // work in progress... where all the functionalities should re
             gameOn = true;
             console.log(el)
             console.log(playerTurn)
-            if( el.childElementCount === 0 ) {
+            if( el.childElementCount === 0 ) { // if the current element has 0 child, i.e. no sign has been displayed then add the sign
                 if( playerTurn == 'x' ) {
                     displayController.displaySign('x', el);
                     playerTurn = 'o';
@@ -408,9 +409,23 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
-    // while( gameOn ) {
+    while( gameOn ) {
+        if( currentMode == 'easy' ) {
 
-    // }
+        }
+
+        if( currentMode == 'medium' ) {
+
+        }
+
+        if( currentMode == 'impossible' ) {
+
+        }
+
+        if( currentMode == '2_players' ) {
+            
+        }
+    }
 
 
     // let player = 
