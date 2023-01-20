@@ -379,7 +379,9 @@ function game() { // work in progress... where all the functionalities should re
         // console.log("this is now the current mode: ", currentMode)
     })
 
-
+    while( gameOn ) {
+        
+    }
 
 
     // let player = 
