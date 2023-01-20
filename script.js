@@ -1,5 +1,3 @@
-
-
 // function restartGame() { // work in progresss...
 //     const restart = document.querySelector('.restart');
 // }
@@ -24,8 +22,6 @@
 // let frowardslashDiagonal = ['x','','','','x','','','','x']
 
 // console.log(checkWin(draw, 'x'))
-
-
 
 const gameBoard = (() => { // work in progress... where the board object will be stored
     const _board = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
@@ -337,9 +333,10 @@ function game() { // work in progress... where all the functionalities should re
     const modeDiv = document.getElementById('mode');
     const tableData = document.querySelectorAll('.table__data');
 
+    let theBoard = ['_','_','_','_','_','_','_','_','_'];
     
     let currentMode = 'easy';
-    let playerTurn;
+    let playerTurn = 'x';
     let gameOn = false;
     // console.log(currentMode)
     let move = {}
@@ -358,7 +355,8 @@ function game() { // work in progress... where all the functionalities should re
     // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
     modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
         currentMode = gameController.gameMode.selectedMode();
-        console.log("this is now the current mode: ", currentMode)
+        gameOn = false;
+        // console.log("this is now the current mode: ", currentMode)
     })
     
     displayController.displayCurrentPlayerText(); // default text for .header__choice-text
@@ -367,23 +365,26 @@ function game() { // work in progress... where all the functionalities should re
     playersDiv.forEach( elem => { // assign players based on click on either .player--x or .player--o except for 2 players mode
         elem.addEventListener('click', () => {
             if( currentMode !== '2_players') {
-                if(gameController.playerSelection.playerSign() == 'x') {
-                    player1 = 'x';
-                    player2 = 'o';
-                } else if(gameController.playerSelection.playerSign() == 'o') {
-                    player1 = 'o'; 
-                    player2 = 'x';
-                    displayController.displayCurrentPlayerText('x');
+                while( !gameOn ) {
+                    console.log(gameOn)
+                    if(gameController.playerSelection.playerSign() == 'x') {
+                        player1 = 'x';
+                        player2 = 'o';
+                    } else if(gameController.playerSelection.playerSign() == 'o') {
+                        player1 = 'o'; 
+                        player2 = 'x';
+                        displayController.displayCurrentPlayerText('x');
+                        gameOn = true;
+                    }
+                    console.log(player1, player2)
                 }
-                console.log(player1, player2)
             }
         })
     })
 
- 
-
     tableData.forEach( el => {
         el.addEventListener('click', () => {
+            gameOn = true;
             console.log(el)
         })
     })
