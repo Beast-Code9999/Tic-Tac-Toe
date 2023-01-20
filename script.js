@@ -105,8 +105,8 @@ const displayController = (() => { // work in progress... display all the necess
         }
     }
 
-    const displaySign = (playerTurn) => { // display either x or circle in .table__data on click
-        const tableData = document.querySelectorAll('.table__data');
+    const displaySign = (playerTurn, element) => { // display either x or circle in .table__data on click
+        // const tableData = document.querySelectorAll('.table__data');
     
         function _createCircleDiv( el ) {
             const circle = document.createElement('div');
@@ -150,21 +150,28 @@ const displayController = (() => { // work in progress... display all the necess
             el.appendChild(ex);
         }
     
-        tableData.forEach(element => {
-            element.addEventListener('click', () => {
-                if( element.childElementCount === 0 ) {
-                    if( playerTurn === "x" ) {
-                        _createExDiv(element);
-                        console.log("WORKS");
-                    } else if( playerTurn === "o" ) {
-                        _createCircleDiv(element);
-                        console.log("WORKS");
-                    } else {
-                        console.log("WRONG INPUT within displaySign()");
-                    }
-                }
-            });
-        });
+        // tableData.forEach(element => {
+        //     element.addEventListener('click', () => {
+        //         if( element.childElementCount === 0 ) {
+        //             if( playerTurn === "x" ) {
+        //                 _createExDiv(element);
+        //                 console.log("WORKS");
+        //             } else if( playerTurn === "o" ) {
+        //                 _createCircleDiv(element);
+        //                 console.log("WORKSSSS");
+        //             } else {
+        //                 console.log("WRONG INPUT within displaySign()");
+        //             }
+        //         }
+        //     });
+        // });
+        if( playerTurn == 'x' ) {
+            _createExDiv(element);
+        } else if( playerTurn == 'o' ) {
+            _createCircleDiv(element);
+        } else {
+            console.log("WRONG INPUT within displaySign()");
+        }
     }
 
     return {
@@ -386,6 +393,14 @@ function game() { // work in progress... where all the functionalities should re
         el.addEventListener('click', () => {
             gameOn = true;
             console.log(el)
+            console.log(playerTurn)
+            if( playerTurn == 'x' ) {
+                displayController.displaySign('x', el);
+                playerTurn = 'o';
+            } else if( playerTurn == 'o') {
+                displayController.displaySign('o', el);
+                playerTurn = 'x';
+            }
         })
     })
 
