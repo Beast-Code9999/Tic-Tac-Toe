@@ -335,6 +335,7 @@ const gameController = (() => {
 function game() { // work in progress... where all the functionalities should reside...
     const playersDiv = document.querySelectorAll('.player');
     const modeDiv = document.getElementById('mode');
+    const tableData = document.querySelectorAll('.table__data');
 
     
     let currentMode = 'easy';
@@ -355,33 +356,41 @@ function game() { // work in progress... where all the functionalities should re
     // retarts erases the board, but not the score
 
     // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
-    
+    modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
+        currentMode = gameController.gameMode.selectedMode();
+        console.log("this is now the current mode: ", currentMode)
+    })
     
     displayController.displayCurrentPlayerText(); // default text for .header__choice-text
     displayController.displayCurrentPlayerBorder('x'); // default selected player css
 
-    playersDiv.forEach( elem => { // assign players based on click on either .player--x or .player--o
+    playersDiv.forEach( elem => { // assign players based on click on either .player--x or .player--o except for 2 players mode
         elem.addEventListener('click', () => {
-            if(gameController.playerSelection.playerSign() == 'x') {
-                player1 = 'x';
-                player2 = 'o';
-            } else if(gameController.playerSelection.playerSign() == 'o') {
-                player1 = 'o'; 
-                player2 = 'x';
-                displayController.displayCurrentPlayerText('x');
+            if( currentMode !== '2_players') {
+                if(gameController.playerSelection.playerSign() == 'x') {
+                    player1 = 'x';
+                    player2 = 'o';
+                } else if(gameController.playerSelection.playerSign() == 'o') {
+                    player1 = 'o'; 
+                    player2 = 'x';
+                    displayController.displayCurrentPlayerText('x');
+                }
+                console.log(player1, player2)
             }
-            console.log(player1, player2)
         })
     })
 
-    modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
-        currentMode = gameController.gameMode.selectedMode();
-        // console.log("this is now the current mode: ", currentMode)
+ 
+
+    tableData.forEach( el => {
+        el.addEventListener('click', () => {
+            console.log(el)
+        })
     })
 
-    while( gameOn ) {
-        
-    }
+    // while( gameOn ) {
+
+    // }
 
 
     // let player = 
