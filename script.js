@@ -401,9 +401,13 @@ function game() { // work in progress... where all the functionalities should re
                 if( playerTurn == 'x' ) {
                     displayController.displaySign('x', el);
                     playerTurn = 'o';
+                    displayController.displayCurrentPlayerText('o');
+                    displayController.displayCurrentPlayerBorder('o');
                 } else if( playerTurn == 'o') {
                     displayController.displaySign('o', el);
                     playerTurn = 'x';
+                    displayController.displayCurrentPlayerText('x');
+                    displayController.displayCurrentPlayerBorder('x');
                 }
             }
         })
@@ -411,7 +415,7 @@ function game() { // work in progress... where all the functionalities should re
 
     while( gameOn ) {
         if( currentMode == 'easy' ) {
-
+            
         }
 
         if( currentMode == 'medium' ) {
@@ -423,7 +427,7 @@ function game() { // work in progress... where all the functionalities should re
         }
 
         if( currentMode == '2_players' ) {
-            
+
         }
     }
 
