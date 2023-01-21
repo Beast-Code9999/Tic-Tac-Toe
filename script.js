@@ -395,6 +395,11 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
+    if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
+        console.log('game over')
+        gameOn = false
+    }
+
     tableData.forEach( el => { // work in progress
         el.addEventListener('click', () => {
             // console.log(el)
@@ -402,28 +407,45 @@ function game() { // work in progress... where all the functionalities should re
                 gameOn = true;
             } 
 
+            if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
+                console.log('game over')
+                gameOn = false
+            }
+
             // console.log(playerTurn)
             if( gameOn == true ) {
                 if( el.childElementCount === 0 ) { // if the current element has 0 child, i.e. no sign has been displayed then add the sign
                     if( playerTurn == 'x' ) {
                         displayController.displaySign('x', el);
                         playerTurn = 'o';
-
                         console.log(el.dataset.table)
                         theBoard[el.dataset.table] = 'x';
                         console.log(theBoard)
-    
+                        if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
+                            console.log('game over')
+                            gameOn = false
+                            displayController.displayCurrentPlayerText('over');
+                        } else {
+                            displayController.displayCurrentPlayerText(playerTurn);
+                            displayController.displayCurrentPlayerBorder(playerTurn);
+                        }
                     } else if( playerTurn == 'o') {
                         displayController.displaySign('o', el);
                         playerTurn = 'x';
-
                         theBoard[el.dataset.table] = 'o';
                         console.log(el.dataset.table)
                         console.log(theBoard)
+                        if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
+                            console.log('game over')
+                            gameOn = false
+                            displayController.displayCurrentPlayerText('over');
+                        } else {
+                            displayController.displayCurrentPlayerText(playerTurn);
+                            displayController.displayCurrentPlayerBorder(playerTurn);
+                        }
                     }
                 } 
-                displayController.displayCurrentPlayerText(playerTurn);
-                displayController.displayCurrentPlayerBorder(playerTurn);
+
             }
         })
     })
@@ -433,23 +455,23 @@ function game() { // work in progress... where all the functionalities should re
 
     while( gameOn == true ) {
         // // console.log("WORKSSSSSS")
-        if( currentMode == 'easy' ) {
-            break
-        }
+        // if( currentMode == 'easy' ) {
+        //     break
+        // }
 
-        if( currentMode == 'medium' ) {
-            break
-        }
+        // if( currentMode == 'medium' ) {
+        //     break
+        // }
 
-        if( currentMode == 'impossible' ) {
-            break
-        }
+        // if( currentMode == 'impossible' ) {
+        //     break
+        // }
 
-        if( currentMode == '2_players' ) {
-            if( playerTurn == player1 ) {
+        // if( currentMode == '2_players' ) {
+        //     if( playerTurn == player1 ) {
 
-            } 
-        }
+        //     } 
+        // }
     }
 }
 game();
