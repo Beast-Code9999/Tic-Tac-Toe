@@ -398,6 +398,14 @@ function game() { // work in progress... where all the functionalities should re
     tableData.forEach( el => { // work in progress
         el.addEventListener('click', () => {
             // console.log(el)
+            if(!gameController.checkWin(theBoard, 'x') || !gameController.checkWin(theBoard, 'o')) {
+                gameOn = true;
+            } 
+            if(gameController.checkWin(theBoard, 'x') || gameController.checkWin(theBoard, 'o') || gameController.checkBoardIsFull(theBoard)) {
+                console.log("GAME OVER")
+                gameOn = false
+                
+            }
             // console.log(playerTurn)
             if( gameOn == true ) {
                 if( el.childElementCount === 0 ) { // if the current element has 0 child, i.e. no sign has been displayed then add the sign
@@ -461,12 +469,12 @@ function game() { // work in progress... where all the functionalities should re
     // tableData.forEach(el => {
     //     el.addEventListener('click', ()=> {
     //         console.log(theBoard)
-    //         if(!gameController.checkWin(theBoard, 'x')) {
-    //             gameOn = true;
-    //         } else {
-    //             console.log("GAME OVER")
-    //             gameOn = false
-    //         }
+            // if(!gameController.checkWin(theBoard, 'x')) {
+            //     gameOn = true;
+            // } else {
+            //     console.log("GAME OVER")
+            //     gameOn = false
+            // }
     //     })
     // })
     // let player = 
