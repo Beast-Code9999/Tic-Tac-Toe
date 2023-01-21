@@ -8,7 +8,7 @@
 
 
 // let arrayTest = ['o','x','x','x','x','o','o','o','x']
-// let draw = ['x','o','x','x','o','x','o','x','o'];
+let draw = ['x','o','x','x','o','x','o','x','o'];
 
 // let topHorizontal = ['_','_','_','_','_','_','x','x','x'];
 // let middleHorizontal = ['','','','x','x','x','','',''];
@@ -337,6 +337,8 @@ const gameController = (() => {
     }
 })();
 
+
+
 function game() { // work in progress... where all the functionalities should reside...
     const playersDiv = document.querySelectorAll('.player');
     const modeDiv = document.getElementById('mode');
@@ -348,7 +350,6 @@ function game() { // work in progress... where all the functionalities should re
     let playerTurn = 'x';
 
     let gameOn = false;
-    // console.log(currentMode)
     let move = {}
 
     let player1 = 'x'; // human
@@ -366,6 +367,7 @@ function game() { // work in progress... where all the functionalities should re
     modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
         currentMode = gameController.gameMode.selectedMode();
         gameOn = false;
+        // erase board back to default
         // console.log("this is now the current mode: ", currentMode)
     })
     
@@ -376,15 +378,16 @@ function game() { // work in progress... where all the functionalities should re
         elem.addEventListener('click', () => {
             if( currentMode !== '2_players') {
                 while( !gameOn ) {
-                    console.log(gameOn)
                     if(gameController.playerSelection.playerSign() == 'x') {
                         player1 = 'x';
                         player2 = 'o';
+                        break
                     } else if(gameController.playerSelection.playerSign() == 'o') {
                         player1 = 'o'; 
                         player2 = 'x';
                         displayController.displayCurrentPlayerText('x');
                         gameOn = true;
+                        break
                     }
                     console.log(player1, player2)
                 }
@@ -392,49 +395,84 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
-    tableData.forEach( el => {
+    tableData.forEach( el => { // work in progress
         el.addEventListener('click', () => {
-            gameOn = true;
-            console.log(el)
-            console.log(playerTurn)
-            if( el.childElementCount === 0 ) { // if the current element has 0 child, i.e. no sign has been displayed then add the sign
-                if( playerTurn == 'x' ) {
-                    displayController.displaySign('x', el);
-                    playerTurn = 'o';
-                    displayController.displayCurrentPlayerText('o');
-                    displayController.displayCurrentPlayerBorder('o');
-                } else if( playerTurn == 'o') {
-                    displayController.displaySign('o', el);
-                    playerTurn = 'x';
-                    displayController.displayCurrentPlayerText('x');
-                    displayController.displayCurrentPlayerBorder('x');
-                }
+            // console.log(el)
+            // console.log(playerTurn)
+            if( gameOn == true ) {
+                if( el.childElementCount === 0 ) { // if the current element has 0 child, i.e. no sign has been displayed then add the sign
+                    if( playerTurn == 'x' ) {
+                        displayController.displaySign('x', el);
+                        playerTurn = 'o';
+                        displayController.displayCurrentPlayerText('o');
+                        displayController.displayCurrentPlayerBorder('o');
+                        console.log(el.dataset.table)
+                        theBoard[el.dataset.table] = 'x';
+                        console.log(theBoard)
+    
+                    } else if( playerTurn == 'o') {
+                        displayController.displaySign('o', el);
+                        playerTurn = 'x';
+                        displayController.displayCurrentPlayerText('x');
+                        displayController.displayCurrentPlayerBorder('x');
+                        theBoard[el.dataset.table] = 'o';
+                        console.log(el.dataset.table)
+                        console.log(theBoard)
+                    }
+                } 
             }
         })
     })
 
-    while( gameOn ) {
+    while( gameOn == true ) {
+        // // console.log("WORKSSSSSS")
         if( currentMode == 'easy' ) {
-            
+            break
         }
 
         if( currentMode == 'medium' ) {
-
+            break
         }
 
         if( currentMode == 'impossible' ) {
-
+            break
         }
 
         if( currentMode == '2_players' ) {
+            break
+        }
 
+        if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
+            console.log('game over')
+            gameOn = false
+            break
         }
     }
 
+    // while( gameOn ) {
+    //     if( playerTurn == 'x') {
 
+    //     }
+    //     else {
+
+    //     }
+    // }
+
+    // tableData.forEach(el => {
+    //     el.addEventListener('click', ()=> {
+    //         console.log(theBoard)
+    //         if(!gameController.checkWin(theBoard, 'x')) {
+    //             gameOn = true;
+    //         } else {
+    //             console.log("GAME OVER")
+    //             gameOn = false
+    //         }
+    //     })
+    // })
     // let player = 
 }
 game();
+
 
 // footer script
 function addDynamicFooterDate() { // update footer string representing the current year based on current date
