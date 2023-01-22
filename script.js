@@ -273,6 +273,15 @@ const gameController = (() => {
         } return true;
     }    
 
+    const evaluateBoard = ( board, player, ai ) => {
+        if( checkWin( board, player )) {
+            return 10
+        } 
+        if( checkWin( board, ai )) {
+            return -10
+        }
+    }
+
     const miniMax = (board, depth, isMax) => { // work in progress... ai for difficulties
         let score = evaluateBoard(board, player, ai);
     
@@ -282,7 +291,7 @@ const gameController = (() => {
         if( score == -10 ) {
             return score;
         }
-        if( checkBoardIsFull == true ) {
+        if( checkBoardIsFull( board ) == true ) {
             return 0;
         }
         if( isMax ) { // if maximizer's move
@@ -355,7 +364,7 @@ function game() { // work in progress... where all the functionalities should re
     let player1 = 'x'; // human
     let player2 = 'o'; // ai or human_2
 
-    // if game on: i.e. x makes a move
+    // if game on: i.e. x makes a move     
     // player selection cannot occur
 
     // Mode can be changed throughout the game, when changed score stays the same, but board is erased, 
@@ -363,7 +372,7 @@ function game() { // work in progress... where all the functionalities should re
 
     // retarts erases the board, but not the score
 
-    // on every start of the game in all mode except 2 players mode, the player has the option to change MODE and SIGN 
+    // on every start of the game in all mode except "2 players" mode, the player has the option to change MODE and SIGN 
     modeDiv.addEventListener('change', () => { // listen for mode change and modify currentMode accordingly
         currentMode = gameController.gameMode.selectedMode();
         gameOn = false;
@@ -394,6 +403,10 @@ function game() { // work in progress... where all the functionalities should re
             }
         })
     })
+
+    // on click to change player from 'x' to 'o', automatically pick and choose board to display x 
+
+    // if mode is easy, medium, or impossible, use an AI
 
     if( gameController.checkWin(theBoard, 'x') === true || gameController.checkWin(theBoard, 'o') === true ) {
         console.log('game over')
