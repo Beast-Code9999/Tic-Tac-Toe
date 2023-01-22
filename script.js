@@ -62,16 +62,13 @@ const displayController = (() => { // work in progress... display all the necess
                 _headerChoiceText.textContent = '';
                 _addImage( "./img/x-lg-svgrepo-com.svg", "X-img" );
                 _addSpanText("Turn");
-                break;
             case "o": // 1 img tag, 1 span tag
                 _headerChoiceText.textContent = '';
                 _addImage( "./img/circle-svgrepo-com.svg", "O-img" );
                 _addSpanText("Turn");
-                break;
             case "over":    // single text block element
                 _headerChoiceText.textContent = '';
                 _addSpanText("Game Over");
-                break;
             default:        // single text block element
                 _headerChoiceText.textContent = '';
                 _addSpanText("start or select player");
@@ -381,13 +378,11 @@ function game() { // work in progress... where all the functionalities should re
                     if(gameController.playerSelection.playerSign() == 'x') {
                         player1 = 'x';
                         player2 = 'o';
-                        break
                     } else if(gameController.playerSelection.playerSign() == 'o') {
                         player1 = 'o'; 
                         player2 = 'x';
                         displayController.displayCurrentPlayerText('x');
                         gameOn = true;
-                        break
                     }
                     console.log(player1, player2)
                 }
@@ -450,29 +445,30 @@ function game() { // work in progress... where all the functionalities should re
         })
     })
 
+    playersDiv.forEach( el => {
+        el.addEventListener('click', ()=> {
+            while( gameOn ) {
 
-
-
-    while( gameOn == true ) {
-        // // console.log("WORKSSSSSS")
-        // if( currentMode == 'easy' ) {
-        //     break
-        // }
-
-        // if( currentMode == 'medium' ) {
-        //     break
-        // }
-
-        // if( currentMode == 'impossible' ) {
-        //     break
-        // }
-
-        // if( currentMode == '2_players' ) {
-        //     if( playerTurn == player1 ) {
-
-        //     } 
-        // }
-    }
+                if(player1 == 'x') {
+                }
+                else if( player2 == 'x') {
+                    if( playerTurn == player2) {
+                        let availableMoveIndex = []
+                        for(let i = 0; i < theBoard.length; i++) {
+                            if( theBoard[i] == '_') {
+                                availableMoveIndex.push(i);
+                                console.log("this is available moves: ", availableMoveIndex)
+                                theBoard[Math.floor(Math.random(availableMoveIndex.length))] = 'x';
+                                console.log(theBoard)
+                            }
+                        }
+                        availableMoveIndex = []
+                        break
+                    }
+                }
+            }
+        })
+    })
 }
 game();
 
