@@ -360,6 +360,7 @@ function game() { // work in progress... where all the functionalities should re
 
     let gameOn = false;
     let move = {}
+    let score = 0;
 
     let player1 = 'x'; // human
     let player2 = 'o'; // ai or human_2
